@@ -1,0 +1,63 @@
+/*
+ * Source: https://css-tricks.com/snippets/apple-com-hamburger-bun-menu/
+ */
+
+$hamburger-size: 4.8rem;
+$hamburger-bun-height: 0.2rem;
+$hamburger-bun-width: 2.4rem;
+$hamburger-bun-position: ($hamburger-size / 2) - $hamburger-bun-height;
+
+.hamburger {
+  cursor: pointer;
+  position: relative;
+  width: $hamburger-size;
+  height: $hamburger-size;
+  transition: transform 0.25s;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.hamburger__top-bun,
+.hamburger__bottom-bun {
+  content: '';
+  display: block;
+  position: absolute;
+  width: $hamburger-bun-width;
+  height: $hamburger-bun-height;
+  background: #fff;
+  transform: rotate(0);
+  transition: background 0.25s, transform 0.25s;
+}
+
+.hamburger:hover [class*="-bun"] {
+  background: #eee;
+}
+
+.hamburger__top-bun {
+  top: $hamburger-bun-position;
+  transform: translateY(-3px);
+}
+
+.hamburger__bottom-bun {
+  bottom: $hamburger-bun-position;
+  transform: translateY(3px);
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.open .hamburger__top-bun {
+  transform:
+    rotate(45deg)
+    translateY(0px)
+    translateX(1px);
+}
+
+.open .hamburger__bottom-bun {
+  transform:
+    rotate(-45deg)
+    translateY(0px)
+    translateX(1px);
+}

@@ -1,0 +1,27 @@
+@import './_variables';
+
+@mixin make-color($name, $currentColor) {
+  .c-#{$name} {
+    color: $currentColor;
+  }
+  .bg-#{$name} {
+    background-color: $currentColor;
+  }
+}
+
+@include make-color('primary', $color-primary);
+@include make-color('secondary', $color-secondary);
+@include make-color('success', $color-success);
+@include make-color('warning', $color-warning);
+@include make-color('caution', $color-caution);
+@include make-color('slate-base', $color-slate-base);
+@include make-color('slate-90', $color-slate-90);
+@include make-color('slate-80', $color-slate-80);
+@include make-color('slate-70', $color-slate-70);
+@include make-color('slate-60', $color-slate-60);
+@include make-color('slate-50', $color-slate-50);
+@include make-color('slate-40', $color-slate-40);
+@include make-color('slate-30', $color-slate-30);
+@include make-color('slate-20', $color-slate-20);
+@include make-color('slate-10', $color-slate-10);
+@include make-color('slate-0', $color-slate-0);

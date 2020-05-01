@@ -1,0 +1,77 @@
+// Color palette TBD
+$green: #3dea93;
+$beige: #D8D0C6;
+$orange: #FFCD8C;
+$red: #FFAD8D;
+$yellow: #FFD874;
+$lavender: #faf9ff;
+$purple: #C1A1E8;
+$blue: #4298ff;
+$black: #000;
+$white: #FFF;
+
+$bg-pink: #b224ef;
+$bg-purple: #5055fa;
+
+$color-primary: #C1A1E8;
+$color-secondary: #b224ef;
+$color-success: #36c2b5;
+$color-success-dark: #049792;
+$color-warning: #eb4770;
+$color-warning-dark: #c52145;
+$color-caution: #ffc400;
+$color-caution-dark: #e6ab00;
+
+$color-slate-base: #333;
+$color-slate-90: #4d4d4d;
+$color-slate-80: #666;
+$color-slate-70: #808080;
+$color-slate-60: #999;
+$color-slate-50: #bababa;
+$color-slate-40: #ccc;
+$color-slate-30: #ddd;
+$color-slate-20: #ededed;
+$color-slate-10: #f2f2f2;
+$color-slate-0: #fff;
+$color-icon: #4A71D1;
+$color-light-gray: #eee;
+
+$gradient-bg: linear-gradient(
+    to bottom right,
+    rgba(38, 18, 71, 1) 0%,
+    rgba(45, 25, 84, 1) 50%,
+    rgba(72, 45, 132, 1) 100%
+);
+$color-dark: rgba(33, 19, 68, 1);
+
+/* font */
+$font-weight-thin: 200;
+$font-weight-light: 300;
+$font-weight-base: 400;
+$font-weight-bold: 700;
+
+$font-size-xsmall: 1.2rem;
+$font-size-small: 1.4rem;
+$font-size-base: 1.6rem;
+$font-size-large: 2.4rem;
+$font-size-xlarge: 3.2rem;
+
+$line-height-base: 2.4rem;
+
+/* common border styles */
+$slate-30-border: 0.1rem solid $color-slate-30;
+$slate-50-border: 0.1rem solid $color-slate-50;
+$primary-color-border: 0.1rem solid $color-primary;
+$secondary-color-border: 0.1rem solid $color-secondary;
+$secondary-color-border-light: 0.1rem solid $color-secondary-light;
+
+/* screen-width breakpoints */
+$media-sm: 'only screen and (min-width: 576px)';
+$media-md: 'only screen and (min-width: 768px)';
+$media-md-unit: '(min-width: 768px)';
+$media-lg: 'only screen and (min-width: 992px)';
+$media-xl: 'only screen and (min-width: 1200px)';
+$media-lt-sm: 'only screen and (max-width: 575px)';
+$media-lt-md: 'only screen and (max-width: 767px)';
+$media-lt-lg: 'only screen and (max-width: 991px)';
+$media-lt-desktop: 'only screen and (max-width: 1199px)';

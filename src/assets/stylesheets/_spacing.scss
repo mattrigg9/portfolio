@@ -1,0 +1,44 @@
+/* Here lives common layout utilities you need for common behaviors with columns and rows. These should all use flex unless not possible */
+$distances: 0, 0.8rem, 1rem, 1.25rem, 1.5rem, 2rem, 3rem, 4rem, 6rem, 12rem;
+/*
+1: 0.8rem
+2: 1rem
+3: 1.25rem
+4: 1.5rem
+5: 2rem
+6: 3rem
+7: 4rem
+8: 6rem
+9: 12rem
+*/
+
+@mixin make-spacer($spacetype, $spacename, $num) {
+  .#{$spacetype}-#{$num} {
+    #{$spacename}: nth($distances, $num + 1);
+  }
+  .#{$spacetype}l-#{$num} {
+    #{$spacename}-left: nth($distances, $num + 1);
+  }
+  .#{$spacetype}r-#{$num} {
+    #{$spacename}-right: nth($distances, $num + 1);
+  }
+  .#{$spacetype}t-#{$num} {
+    #{$spacename}-top: nth($distances, $num + 1);
+  }
+  .#{$spacetype}b-#{$num} {
+    #{$spacename}-bottom: nth($distances, $num + 1);
+  }
+  .#{$spacetype}x-#{$num} {
+    #{$spacename}-left: nth($distances, $num + 1);
+    #{$spacename}-right: nth($distances, $num + 1);
+  }
+  .#{$spacetype}y-#{$num} {
+    #{$spacename}-top: nth($distances, $num + 1);
+    #{$spacename}-bottom: nth($distances, $num + 1);
+  }
+}
+
+@for $i from 0 through 9 {
+  @include make-spacer('p', 'padding', $i);
+  @include make-spacer('m', 'margin', $i);
+}
