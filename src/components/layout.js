@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Hero from "./hero"
+import styles from "./layout.module.scss"
 
 const Layout = ({ children }) => {
   return (
@@ -18,18 +19,8 @@ const Layout = ({ children }) => {
         This app works best with JavaScript enabled.
       </noscript>
 
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          &copy; {new Date().getFullYear()}, Matt Rigg
-        </footer>
-      </div>
+      <main className={styles.content}>{children}</main>
+      <footer>&copy; {new Date().getFullYear()}, Matt Rigg</footer>
     </>
   )
 }

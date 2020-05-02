@@ -5,41 +5,37 @@ import Header from "./header"
 import styles from "./hero.module.scss"
 import Image from "./image"
 import Img from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-        heroBackground: file(relativePath: { eq: "hero-bg.jpeg" }) {
-            childImageSharp {
-              fluid(quality: 95, maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          },
+      heroBackground: file(relativePath: { eq: "hero-bg.jpeg" }) {
+        childImageSharp {
+          fluid(quality: 95, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       site {
         siteMetadata {
           title
         }
       }
     }
-  `);
+  `)
 
   return (
-        <BackgroundImage
-          Tag="section"
-          className={styles.container}
-          fluid={data.heroBackground.childImageSharp.fluid}
-          alt=""
-        >
-
+    <BackgroundImage
+      Tag="section"
+      className={styles.container}
+      fluid={data.heroBackground.childImageSharp.fluid}
+      alt=""
+    >
       <Header></Header>
 
-      <h1 className={styles.title}>
-          Claim your place in the world
-      </h1>
-
-      </BackgroundImage>
+      <h1 className={styles.title}>Claim your place in the world</h1>
+    </BackgroundImage>
   )
 }
 

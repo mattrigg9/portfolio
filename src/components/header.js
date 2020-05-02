@@ -1,6 +1,6 @@
 import { Link, useStaticQuery, graphql } from "gatsby"
 import React from "react"
-import classNames from 'classnames';
+import classNames from "classnames"
 import styles from "./header.module.scss"
 
 const Header = () => {
@@ -17,9 +17,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.navLogo}>
-          Matt Rigg
-        </div>
+        <div className={styles.navLogo}>Matt Rigg</div>
         <ul className={styles.menu}>
           <li className={styles.menuItem}>
             <Link className={styles.menuItemLink} to="#about">
