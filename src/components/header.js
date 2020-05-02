@@ -1,42 +1,47 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import React from "react"
+import classNames from 'classnames';
+import styles from "./header.module.scss"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  return (
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <div className={styles.navLogo}>
+          Matt Rigg
+        </div>
+        <ul className={styles.menu}>
+          <li className={styles.menuItem}>
+            <Link className={styles.menuItemLink} to="#about">
+              About
+            </Link>
+          </li>
 
-Header.defaultProps = {
-  siteTitle: ``,
+          <li className={styles.menuItem}>
+            <Link className={styles.menuItemLink} to="#about">
+              About
+            </Link>
+          </li>
+
+          <li className={styles.menuItem}>
+            <Link className={styles.menuItemLink} to="#about">
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  )
 }
 
 export default Header
