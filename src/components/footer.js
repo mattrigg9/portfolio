@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import styles from "./footer.module.scss"
 
 // TODO: Query data from structured config
@@ -9,14 +8,20 @@ const Footer = () => {
       <h1 className={styles.title}>Matt Rigg</h1>
       <ul className={styles.links}>
         <li>
-          <Link to="https://www.linkedin.com/in/mattrigg/">Contact</Link>
+          <a href="https://www.linkedin.com/in/mattrigg/" target="_blank">
+            Contact
+          </a>
         </li>
 
         <li>
-          <Link to="https://www.linkedin.com/in/mattrigg/">LinkedIn</Link>
+          <a href="https://www.linkedin.com/in/mattrigg/" target="_blank">
+            LinkedIn
+          </a>
         </li>
         <li>
-          <Link to="https://mattrigg.photography">Photography</Link>
+          <a href="https://mattrigg.photography" target="_blank">
+            Photography
+          </a>
         </li>
       </ul>
     </footer>

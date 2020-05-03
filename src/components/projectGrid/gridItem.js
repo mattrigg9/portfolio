@@ -3,18 +3,21 @@ import classNames from "classnames"
 import Img from "gatsby-image"
 import styles from "./gridItem.module.scss"
 
-const GridItem = ({ shadow, title, href, image, description }) => (
+const GridItem = ({ title, alt, href, image, description, shadow = false }) => (
   <li className={styles.gridItem}>
+    <a href={href} target="_blank">
     <Img
-      fixed={image}
+      fluid={image}
+      alt={alt || title}
       className={classNames(styles.gridItemImage, {
-        [styles.isShadow]: shadow,
+        [styles.gridItemImage__shadow]: shadow,
       })}
     />
+    </a>
     <div className={styles.gridItemDetails}>
-      <h3 className={styles.gridItemTitle}>
+      <h2 className={styles.gridItemTitle}>
         <a href={href}>{title}</a>
-      </h3>
+      </h2>
       <div className={styles.gridItemDescription}>{description}</div>
     </div>
   </li>

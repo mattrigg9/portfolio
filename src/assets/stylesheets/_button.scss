@@ -1,6 +1,6 @@
-@import './variables';
+@import "./variables";
 
-.button {
+.btn {
   border-radius: 2.5rem;
   border: 0;
   font-size: $font-size-base;
@@ -10,14 +10,15 @@
   cursor: pointer;
   color: $color-slate-0;
   background-color: $color-secondary;
-  cursor: inherit;
+  cursor: pointer;
   outline: none;
   border: none;
   text-decoration: none;
   white-space: nowrap;
-  padding: 0.75rem 2rem;
+  padding: 1.5rem 2rem;
   width: 100%;
-  max-width: 20rem;
+  max-width: 18rem;
+  text-align: center;
 
   &:focus {
     outline-style: none;
@@ -26,34 +27,34 @@
     background-color: $color-secondary-dark;
   }
 }
-.button.text-small {
+.btn.text-small {
   font-size: $font-size-small;
 }
-.button.large {
+.btn.large {
   border-radius: 4.5rem;
   padding: 1.8rem 4rem;
   max-width: 28rem;
 }
-.button.ghost {
-  background-color: rgba(0,0,0,0.2);
-  border: 0.1rem solid $color-slate-0;
+.btn.ghost {
+  background-color: transparent;
+  border: 0.2rem solid $color-slate-0;
 }
-.button.ghost-on-light {
+.btn.ghost-on-light {
   color: $color-secondary;
   background-color: transparent;
-  border: 0.1rem solid $color-secondary;
+  border: 0.2rem solid $color-secondary;
 }
-.button.text-bold {
+.btn.text-bold {
   font-weight: $font-weight-bold;
 }
 
-.button.ghost:focus,
-.button.ghost:hover {
+.btn.ghost:focus,
+.btn.ghost:hover {
   background-color: $color-secondary;
   border-color: $color-secondary;
 }
-.button.ghost-on-light:focus,
-.button.ghost-on-light:hover {
+.btn.ghost-on-light:focus,
+.btn.ghost-on-light:hover {
   background-color: $color-secondary;
   color: $color-slate-0;
 }

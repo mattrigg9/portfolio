@@ -1,17 +1,29 @@
 @import "../assets/stylesheets/_variables";
 
+$section-overlap-spacing: 5rem;
+
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 2rem;
 }
 
-.content-row {
+.section {
   width: 100%;
-  max-width: 1300px;
-  margin-bottom: 50px;
+  max-width: 1200px;
+  margin-bottom: $section-vertical-spacing;
 
-  &.overlap {
-    margin-top: -100px;
+  .section-title {
+    position: relative;
+    margin-bottom: 2.5rem;
+    &__dark {
+      color: $color-slate-base;
+    }
+  }
+
+  &.overlap-top {
+    margin-top: -$section-overlap-spacing;
+    margin-bottom: $section-vertical-spacing + $section-overlap-spacing; // Compensate for overflow
   }
 }

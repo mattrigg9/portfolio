@@ -17,7 +17,11 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.navLogo}>Matt Rigg</div>
+        <div className={styles.navLogo}>
+          <h2>
+          Matt Rigg
+          </h2>
+          </div>
         <ul className={styles.menu}>
           <li className={styles.menuItem}>
             <Link className={styles.menuItemLink} to="#about">

@@ -9,8 +9,8 @@ const FeaturedProjects = () => {
     {
       knowmystatus: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
-          fixed(width: 300) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -20,19 +20,19 @@ const FeaturedProjects = () => {
   const projects = [
     {
       title: "Know My Status",
-      image: data.knowmystatus.childImageSharp.fixed,
+      image: data.knowmystatus.childImageSharp.fluid,
       href: "https://knowmystat.us",
       description: "TBD",
     },
     {
       title: "Know My Status",
-      image: data.knowmystatus.childImageSharp.fixed,
+      image: data.knowmystatus.childImageSharp.fluid,
       href: "https://knowmystat.us",
       description: "TBD",
     },
     {
       title: "Know My Status",
-      image: data.knowmystatus.childImageSharp.fixed,
+      image: data.knowmystatus.childImageSharp.fluid,
       href: "https://knowmystat.us",
       description: "TBD",
     },
@@ -40,8 +40,9 @@ const FeaturedProjects = () => {
 
   return (
     <section
-      className={classNames(layoutStyles.contentRow, layoutStyles.overlap)}
+      className={classNames(layoutStyles.section, layoutStyles.overlapTop)}
     >
+      {/* <h3 className={classNames(layoutStyles.sectionTitle, 'c-slate-0')}>Featured Projects</h3> */}
       <ProjectGrid projects={projects} />
     </section>
   )

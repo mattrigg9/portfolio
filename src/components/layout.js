@@ -19,7 +19,6 @@ const Layout = ({ children }) => {
       <noscript key="noscript" id="gatsby-noscript">
         This app works best with JavaScript enabled.
       </noscript>
-
       <main className={styles.content}>{children}</main>
       <Footer />
     </>

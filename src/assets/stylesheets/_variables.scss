@@ -3,11 +3,8 @@ $dusk: #343447;
 $morning-sky: #A8DAFD;
 $muted-sky: #a9bedb;
 $deep-navy: #013158;
-$gold-sun: #f3be7d;
+$gold-sun: #ffd36b;
 $peach: #f2af87;
-
-
-
 $morning-sun: #FDCF80;
 
 $bg-pink: #b224ef;
@@ -46,7 +43,7 @@ $gradient-bg: linear-gradient(
 );
 $color-dark: rgba(33, 19, 68, 1);
 
-/* font */
+// Font
 $font-weight-thin: 200;
 $font-weight-light: 300;
 $font-weight-base: 400;
@@ -56,18 +53,23 @@ $font-size-xsmall: 1.2rem;
 $font-size-small: 1.4rem;
 $font-size-base: 1.6rem;
 $font-size-large: 2.4rem;
-$font-size-xlarge: 3.2rem;
+$font-size-xlarge: 4.2rem;
+$font-size-xxlarge: 5rem;
 
 $line-height-base: 2.4rem;
 
-/* common border styles */
+// Content
+$section-vertical-spacing: 3rem;
+
+// Common border styles
 $slate-30-border: 0.1rem solid $color-slate-30;
 $slate-50-border: 0.1rem solid $color-slate-50;
 $primary-color-border: 0.1rem solid $color-primary;
 $secondary-color-border: 0.1rem solid $color-secondary;
 $secondary-color-border-light: 0.1rem solid $color-secondary-light;
+$border-radius: 1.5rem;
 
-/* screen-width breakpoints */
+// Screen-width breakpoints
 $media-sm: 'only screen and (min-width: 576px)';
 $media-md: 'only screen and (min-width: 768px)';
 $media-md-unit: '(min-width: 768px)';
