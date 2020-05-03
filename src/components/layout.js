@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Hero from "./hero"
+import Footer from "./footer"
 import styles from "./layout.module.scss"
 
 const Layout = ({ children }) => {
@@ -20,7 +21,7 @@ const Layout = ({ children }) => {
       </noscript>
 
       <main className={styles.content}>{children}</main>
-      <footer>&copy; {new Date().getFullYear()}, Matt Rigg</footer>
+      <Footer />
     </>
   )
 }

@@ -34,7 +34,7 @@ const Hero = () => {
     >
       <Header></Header>
 
-      <h1 className={styles.title}>Claim your place in the world</h1>
+      <h1 className={styles.title}>Build your place in the world</h1>
     </BackgroundImage>
   )
 }

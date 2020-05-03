@@ -24,7 +24,7 @@ body,
 html,
 #___gatsby,
 #gatsby-focus-wrapper {
-  background-color: #77858d;
+  background-color: $dusk;
   min-height: 100%;
   min-width: 100%;
 }
@@ -33,6 +33,7 @@ body {
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
+  color: $muted-sky;
   margin: 0 !important;
   overflow-x: hidden;
 }
