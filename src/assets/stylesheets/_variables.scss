@@ -69,6 +69,9 @@ $secondary-color-border: 0.1rem solid $color-secondary;
 $secondary-color-border-light: 0.1rem solid $color-secondary-light;
 $border-radius: 1.5rem;
 
+// Box shadow
+$box-shadow-reg: 0px 20px 52px rgba(0, 0, 0, 0.31);
+
 // Screen-width breakpoints
 $media-sm: 'only screen and (min-width: 576px)';
 $media-md: 'only screen and (min-width: 768px)';

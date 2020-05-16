@@ -7,34 +7,48 @@ import layoutStyles from "./layout.module.scss"
 const FeaturedProjects = () => {
   const data = useStaticQuery(graphql`
     {
-      knowmystatus: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+      knowmystatus: file(relativePath: { eq: "knowmystatus-screen.png" }) {
         childImageSharp {
           fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid
           }
         }
-      }
+      },
+      amazonCare: file(relativePath: { eq: "amazon-care-screen.webp" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      alexaBlueprints: file(relativePath: { eq: "alexa-blueprints-screen.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
     }
   `)
 
   const projects = [
     {
-      title: "Know My Status",
-      image: data.knowmystatus.childImageSharp.fluid,
-      href: "https://knowmystat.us",
-      description: "TBD",
+      title: "Amazon Care",
+      image: data.amazonCare.childImageSharp.fluid,
+      href: "https://amazon.care",
+      description: "A virtual healthcare benefit being piloted for Amazon employees and their families in the Seattle area.",
     },
     {
       title: "Know My Status",
       image: data.knowmystatus.childImageSharp.fluid,
       href: "https://knowmystat.us",
-      description: "TBD",
+      description: "Everyone should know their status. Know My Status is an anonymous sexual health clinic discovery tool.",
     },
     {
-      title: "Know My Status",
-      image: data.knowmystatus.childImageSharp.fluid,
-      href: "https://knowmystat.us",
-      description: "TBD",
+      title: "Alexa Blueprints",
+      image: data.alexaBlueprints.childImageSharp.fluid,
+      href: "https://blueprints.amazon.com",
+      description: "Create your own Alexa skills in minutes, no coding required.",
     },
   ]
 

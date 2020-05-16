@@ -30,7 +30,7 @@ const Hero = () => {
       Tag="section"
       className={styles.container}
       fluid={data.heroBackground.childImageSharp.fluid}
-      alt=""
+      alt="Mountain landscape"
     >
       <Header></Header>
 

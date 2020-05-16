@@ -1,10 +1,10 @@
-import React from "react"
+import React, { Component } from "react"
 
 function Skill({ icon, name }) {
   return (
-    <span>
+    <li>
       {icon} {name}
-    </span>
+    </li>
   )
 }
 

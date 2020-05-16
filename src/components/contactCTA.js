@@ -8,11 +8,11 @@ function ContactCTA() {
     <section className={classNames(layoutStyles.section)}>
       <div className={styles.container}>
         <h2>Start a Project</h2>
-        <p class={styles.description}>
+        <p className={styles.description}>
           Interested in working together? Let's have a chat. I’ll buy the
           coffee.
         </p>
-        <a href="#" class="btn ghost">
+        <a href="#" className="btn ghost">
           Lets do this
         </a>
       </div>

@@ -1,3 +1,5 @@
+@import "./_variables";
+
 .d-flex {
   display: flex;
 }
@@ -107,4 +109,16 @@
 }
 .w-0 {
   width: 0%;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.rounded {
+  border-radius: $border-radius;
+}
+
+.shadow-reg {
+  box-shadow: $box-shadow-reg;
 }

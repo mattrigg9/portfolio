@@ -7,29 +7,34 @@ import { useStaticQuery, graphql } from "gatsby"
 import Skill from "./skill"
 import JobPosition from "./jobPosition"
 import layoutStyles from "../layout.module.scss"
+import styles from "./index.module.scss"
 import { FaReact, FaVuejs, FaJs, FaAws, FaNode } from "react-icons/fa"
 
 function Experience() {
   const skills = [
     {
-      icon: FaJs,
+      icon: <FaAws />,
+      name: "AWS Certified Solutions Architect",
+    },
+    {
+      icon: <FaJs />,
       name: "Javascript",
     },
     {
-      icon: FaNode,
+      icon: <FaNode />,
       name: "NodeJS",
     },
     {
-      icon: FaVuejs,
-      name: "VueJS",
-    },
-    {
-      icon: FaReact,
+      icon: <FaReact />,
       name: "React",
     },
     {
-      icon: FaAws,
-      name: "AWS Solutions Architect",
+      icon: <FaVuejs />,
+      name: "Vue.js",
+    },
+    {
+      icon: <FaReact />,
+      name: "React",
     },
   ]
 
@@ -91,14 +96,20 @@ function Experience() {
       <h1 className={classNames(layoutStyles.sectionTitle)}>Experience</h1>
       <div className="row">
         <div className="col">
-          {positions.map(position => (
-            <JobPosition {...position} />
-          ))}
+          <ul className={styles.timeline}>
+            {positions.map(position => (
+              <li>
+                <JobPosition {...position} />
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="col">
-          {skills.map(skill => (
-            <Skill {...skill} />
-          ))}
+          <ul className={styles.skills}>
+            {skills.map(skill => (
+              <Skill {...skill} />
+            ))}
+          </ul>
         </div>
       </div>
     </section>

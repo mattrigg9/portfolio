@@ -21,7 +21,7 @@
       transform: scale(1.01);
     }
     &__shadow {
-      box-shadow: 0px 20px 52px rgba(0, 0, 0, 0.31);
+      box-shadow: $box-shadow-reg;
     }
   }
 

@@ -3,9 +3,11 @@ import moment from "moment"
 import Img from "gatsby-image"
 
 const TimeRange = ({ startTime, endTime }) => {
+  const formattedStartTime = startTime.format("MMM YYYY")
+  const formattedEndTime = endTime ? endTime.format("MMM YYYY") : "Present"
   return (
     <span>
-      {startTime.format("MMM YYYY")} to {endTime ? endTime.format("MMM YYYY") : "Present"}
+      {formattedStartTime} to {formattedEndTime}
     </span>
   )
 }
@@ -37,18 +39,18 @@ const JobPosition = ({
   return (
     <div className="mb-6">
       <div className="row">
-        <div className="col">{logo && <Img fixed={logo} />}</div>
+        <div className="col">{logo && <Img fixed={logo} alt={employer} />}</div>
       </div>
       <div className="row">
         <div className="col">
-          <h3>
-            {position} <span className="font-weight-light">({employer})</span>
+          <h3 className="text-uppercase m-0">
+            {position} 
           </h3>
+          <p className="font-weight-light">{employer}</p>
         </div>
         <div className="col">
-          <TimeRange startTime={startTime} endTime={endTime} /> 
-          {' '}
-          (<Duration duration={duration} />)
+          <TimeRange startTime={startTime} endTime={endTime} /> (
+          <Duration duration={duration} />)
         </div>
       </div>
       <div className="row">
