@@ -14,6 +14,12 @@ const Footer = () => {
         </li>
 
         <li>
+          <a href="https://github.com/mattrigg9" target="_blank">
+            GitHub
+          </a>
+        </li>
+
+        <li>
           <a href="https://www.linkedin.com/in/mattrigg/" target="_blank">
             LinkedIn
           </a>

@@ -1,0 +1,15 @@
+// Global modal transition override
+// https://github.com/reactjs/react-modal/blob/master/docs/styles/transitions.md
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

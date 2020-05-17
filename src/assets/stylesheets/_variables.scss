@@ -1,16 +1,16 @@
 // Color palette TBD
 $dusk: #343447;
-$morning-sky: #A8DAFD;
+$morning-sky: #a8dafd;
 $muted-sky: #a9bedb;
 $deep-navy: #013158;
 $gold-sun: #ffd36b;
 $peach: #f2af87;
-$morning-sun: #FDCF80;
+$morning-sun: #fdcf80;
 
 $bg-pink: #b224ef;
 $bg-purple: #5055fa;
 
-$color-primary: #C1A1E8;
+$color-primary: #c1a1e8;
 $color-secondary: #5e66d5;
 $color-secondary-dark: #3840af;
 $color-secondary-light: #7e93ee;
@@ -32,14 +32,14 @@ $color-slate-30: #ddd;
 $color-slate-20: #ededed;
 $color-slate-10: #f2f2f2;
 $color-slate-0: #fff;
-$color-icon: #4A71D1;
+$color-icon: #4a71d1;
 $color-light-gray: #eee;
 
 $gradient-bg: linear-gradient(
-    to bottom right,
-    rgba(38, 18, 71, 1) 0%,
-    rgba(45, 25, 84, 1) 50%,
-    rgba(72, 45, 132, 1) 100%
+  to bottom right,
+  rgba(38, 18, 71, 1) 0%,
+  rgba(45, 25, 84, 1) 50%,
+  rgba(72, 45, 132, 1) 100%
 );
 $color-dark: rgba(33, 19, 68, 1);
 
@@ -72,13 +72,28 @@ $border-radius: 1.5rem;
 // Box shadow
 $box-shadow-reg: 0px 20px 52px rgba(0, 0, 0, 0.31);
 
-// Screen-width breakpoints
-$media-sm: 'only screen and (min-width: 576px)';
-$media-md: 'only screen and (min-width: 768px)';
-$media-md-unit: '(min-width: 768px)';
-$media-lg: 'only screen and (min-width: 992px)';
-$media-xl: 'only screen and (min-width: 1200px)';
-$media-lt-sm: 'only screen and (max-width: 575px)';
-$media-lt-md: 'only screen and (max-width: 767px)';
-$media-lt-lg: 'only screen and (max-width: 991px)';
-$media-lt-desktop: 'only screen and (max-width: 1199px)';
+// Spacing
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+
+// Grid
+$grid-columns:                12;
+$grid-row-columns:            6;
+$gutters: $spacers !default;
+$grid-gutter-width: 1.5rem;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

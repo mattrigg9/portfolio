@@ -1,10 +1,12 @@
-@import "../../assets/stylesheets/_variables";
+@import "../../assets/stylesheets/variables";
+@import "../../assets/stylesheets/mixins/breakpoints";
 
 .grid-item {
   width: 100%;
   list-style: none;
   margin: 0;
   user-select: none;
+  cursor: pointer;
 
   .grid-item-image {
     width: 100%;
@@ -16,7 +18,7 @@
     padding: 0;
     cursor: pointer;
     margin-bottom: 1.2rem;
-    transition: transform .1s ease-in-out;
+    transition: transform 0.1s ease-in-out;
     &:hover {
       transform: scale(1.01);
     }
@@ -37,5 +39,54 @@
   .grid-item-description {
     font-weight: 300;
     font-size: $font-size-small;
+  }
+}
+
+// TODO: Migrate modal implementation to HOC
+$modal-viewport-padding: 5rem;
+$modal-viewport-padding-mobile: 1.5rem;
+.modal-overlay {
+  position: fixed;
+  inset: 0rem;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modal {
+  box-shadow: $box-shadow-reg;
+  border-radius: $border-radius;
+  padding: 3rem;
+  position: absolute;
+  border: 0.1rem solid $color-slate-60;
+  background: $color-slate-20;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  max-width: 100%;
+  margin: 0 auto;
+  top: $modal-viewport-padding-mobile;
+  left: $modal-viewport-padding-mobile;
+  right: $modal-viewport-padding-mobile;
+  bottom: $modal-viewport-padding-mobile;
+
+  @include media-breakpoint-up(md) {
+    max-width: 80rem;
+    top: $modal-viewport-padding;
+    left: $modal-viewport-padding;
+    right: $modal-viewport-padding;
+    bottom: $modal-viewport-padding;
+  
+  }
+
+  .modal-content {
+    padding: 3rem;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+    .close-button {
+      cursor: pointer;
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }

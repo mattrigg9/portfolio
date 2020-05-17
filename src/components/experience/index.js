@@ -97,19 +97,19 @@ function Experience() {
       <div className="row">
         <div className="col">
           <ul className={styles.timeline}>
-            {positions.map(position => (
-              <li>
+            {positions.map((position, index) => (
+              <li key={index}>
                 <JobPosition {...position} />
               </li>
             ))}
           </ul>
         </div>
         <div className="col">
-          <ul className={styles.skills}>
+          {/* <ul className={styles.skills}>
             {skills.map(skill => (
               <Skill {...skill} />
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </section>
