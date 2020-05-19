@@ -18,7 +18,6 @@ const Testimonials = () => {
               name
               position
               company
-              image
             }
           }
         }

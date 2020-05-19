@@ -11,6 +11,8 @@ Modal.setAppElement("#___gatsby")
 const GridItem = ({
   title,
   featuredImage,
+  fullImage,
+  website,
   alt,
   shortDescription,
   description,
@@ -45,6 +47,7 @@ const GridItem = ({
         className={styles.modal}
         overlayClassName={styles.modalOverlay}
         shouldCloseOnEsc
+        shouldCloseOnOverlayClick
       >
         <header className={styles.modalHeader}>
           <FaTimes
@@ -54,8 +57,25 @@ const GridItem = ({
           />
         </header>
         <div className={styles.modalContent}>
-          <h2>{title}</h2>
-          <p>{description}</p>
+          <h1 className="mb-5">{title}</h1>
+          <div className="row">
+            <div className="col-12 col-lg-7">
+            <a href={website} target="_blank">
+              <Img
+                fluid={fullImage}
+                alt={alt || title}
+                className={classNames(styles.gridItemImage, {
+                  [styles.gridItemImage__shadow]: shadow,
+                  rounded: true
+                })}
+              />
+              </a>
+            </div>
+            <div className="col-12 col-lg-5">
+              <div dangerouslySetInnerHTML={{__html: description}}></div>
+              <a href={website} target="_blank">Website</a>
+            </div>
+          </div>
         </div>
       </Modal>
     </>

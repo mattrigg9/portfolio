@@ -3,8 +3,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import styles from "./hero.module.scss"
-import Image from "./image"
-import Img from "gatsby-image"
 import BackgroundImage from "gatsby-background-image"
 
 const Hero = () => {
@@ -34,7 +32,9 @@ const Hero = () => {
     >
       <Header></Header>
 
-      <h1 className={styles.title}>Build your place in the world</h1>
+      <h1 className={styles.title}>
+        Human-first development
+      </h1>
     </BackgroundImage>
   )
 }

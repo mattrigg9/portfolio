@@ -55,8 +55,8 @@ $modal-viewport-padding-mobile: 1.5rem;
   border-radius: $border-radius;
   padding: 3rem;
   position: absolute;
-  border: 0.1rem solid $color-slate-60;
-  background: $color-slate-20;
+  border: 0.1rem solid $color-slate-90;
+  background: $dusk;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   outline: none;
@@ -68,7 +68,7 @@ $modal-viewport-padding-mobile: 1.5rem;
   bottom: $modal-viewport-padding-mobile;
 
   @include media-breakpoint-up(md) {
-    max-width: 80rem;
+    max-width: 100rem;
     top: $modal-viewport-padding;
     left: $modal-viewport-padding;
     right: $modal-viewport-padding;

@@ -1,12 +1,15 @@
 @import "../assets/stylesheets/_variables";
 
-$section-overlap-spacing: 5rem;
+$section-top-overlap: 5rem;
+$section-bottom-overlap: 18rem;
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 2rem;
+  margin-top: -$section-top-overlap;
+  margin-bottom: -$section-bottom-overlap; // Compensate for overflow
 }
 
 .section {
@@ -20,10 +23,5 @@ $section-overlap-spacing: 5rem;
     &__dark {
       color: $color-slate-base;
     }
-  }
-
-  &.overlap-top {
-    margin-top: -$section-overlap-spacing;
-    margin-bottom: $section-vertical-spacing + $section-overlap-spacing; // Compensate for overflow
   }
 }

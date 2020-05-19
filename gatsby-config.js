@@ -25,13 +25,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Matt Rigg Development`,
+        short_name: `Matt Rigg`,
+        lang: `en`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#013158`,
+        theme_color: `#ffd36b`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/mattrigg-icon.png`,
       },
     },
     {

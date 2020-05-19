@@ -37,12 +37,8 @@
 }
 .btn.ghost {
   background-color: transparent;
-  border: 0.2rem solid $color-slate-0;
-}
-.btn.ghost-on-light {
-  color: $color-secondary;
-  background-color: transparent;
-  border: 0.2rem solid $color-secondary;
+  border: 0.2rem solid $color-slate-base;
+  color: $color-slate-base;
 }
 .btn.text-bold {
   font-weight: $font-weight-bold;
@@ -50,11 +46,12 @@
 
 .btn.ghost:focus,
 .btn.ghost:hover {
-  background-color: $color-secondary;
-  border-color: $color-secondary;
+  background-color: $color-slate-base;
+  border-color: $color-slate-base;
+  color: $color-slate-0;
 }
 .btn.ghost-on-light:focus,
 .btn.ghost-on-light:hover {
-  background-color: $color-secondary;
+  background-color: $color-slate-base;
   color: $color-slate-0;
 }

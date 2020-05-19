@@ -2,10 +2,10 @@ import React from "react"
 import classNames from "classnames"
 import layoutStyles from "./layout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from 'gatsby-image'
+import Img from "gatsby-image"
 
 const About = () => {
-  const data = useStaticQuery(graphql`
+  const queryResults = useStaticQuery(graphql`
     query {
       headshot: file(relativePath: { eq: "matt-headshot.jpg" }) {
         childImageSharp {
@@ -14,6 +14,9 @@ const About = () => {
           }
         }
       }
+      markdownRemark(frontmatter: { type: { eq: "about-me" } }) {
+        html
+      }
     }
   `)
 
@@ -21,13 +24,14 @@ const About = () => {
     <section className={classNames(layoutStyles.section)}>
       <h1 className={classNames(layoutStyles.sectionTitle)}>About Matt</h1>
       <div className="row">
-      <div className="col-12 col-md-6">
-            <p>
-                Lorem
-            </p>
+        <div className="col-12 col-md-6">
+          <div dangerouslySetInnerHTML={{__html: queryResults.markdownRemark.html}} />
         </div>
         <div className="col-12 col-md-6">
-          <Img fluid={data.headshot.childImageSharp.fluid} className="rounded shadow-reg" />
+          <Img
+            fluid={queryResults.headshot.childImageSharp.fluid}
+            className="rounded shadow-reg"
+          />
         </div>
       </div>
     </section>

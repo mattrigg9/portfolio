@@ -14,7 +14,7 @@ const FeaturedProjects = () => {
       ) {
         edges {
           node {
-            excerpt(format: PLAIN, pruneLength: 10000)
+            html
             frontmatter {
               title
               shortDescription
@@ -44,7 +44,7 @@ const FeaturedProjects = () => {
     const { featuredImage, fullImage, ...frontmatterAttrs } = node.frontmatter
 
     return {
-      description: node.excerpt,
+      description: node.html,
       featuredImage: featuredImage.childImageSharp.fluid,
       fullImage: fullImage.childImageSharp.fluid,
       ...frontmatterAttrs,
