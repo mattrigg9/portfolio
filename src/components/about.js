@@ -16,6 +16,15 @@ const About = () => {
       }
       markdownRemark(frontmatter: { type: { eq: "about-me" } }) {
         html
+        frontmatter {
+          signatureImage {
+            childImageSharp {
+              fixed(width: 75) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
       }
     }
   `)
@@ -25,7 +34,20 @@ const About = () => {
       <h1 className={classNames(layoutStyles.sectionTitle)}>About Matt</h1>
       <div className="row">
         <div className="col-12 col-md-6">
-          <div dangerouslySetInnerHTML={{__html: queryResults.markdownRemark.html}} />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: queryResults.markdownRemark.html,
+            }}
+          />
+          <div className="signature">
+            <Img
+            className="mt-3"
+              fixed={
+                queryResults.markdownRemark.frontmatter.signatureImage
+                  .childImageSharp.fixed
+              }
+            />
+          </div>
         </div>
         <div className="col-12 col-md-6">
           <Img
