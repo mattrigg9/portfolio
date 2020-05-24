@@ -1,4 +1,4 @@
-// Color palette TBD
+// TODO: Refine Color palette
 $dusk: #343447;
 $morning-sky: #a8dafd;
 $muted-sky: #a9bedb;
@@ -7,41 +7,9 @@ $gold-sun: #ffd36b;
 $peach: #f2af87;
 $morning-sun: #fdcf80;
 
-$bg-pink: #b224ef;
-$bg-purple: #5055fa;
+$primary: #c1a1e8;
+$secondary: #5e66d5;
 
-$color-primary: #c1a1e8;
-$color-secondary: #5e66d5;
-$color-secondary-dark: #3840af;
-$color-secondary-light: #7e93ee;
-$color-success: #36c2b5;
-$color-success-dark: #049792;
-$color-warning: #eb4770;
-$color-warning-dark: #c52145;
-$color-caution: #ffc400;
-$color-caution-dark: #e6ab00;
-
-$color-slate-base: #333;
-$color-slate-90: #4d4d4d;
-$color-slate-80: #666;
-$color-slate-70: #808080;
-$color-slate-60: #999;
-$color-slate-50: #bababa;
-$color-slate-40: #ccc;
-$color-slate-30: #ddd;
-$color-slate-20: #ededed;
-$color-slate-10: #f2f2f2;
-$color-slate-0: #fff;
-$color-icon: #4a71d1;
-$color-light-gray: #eee;
-
-$gradient-bg: linear-gradient(
-  to bottom right,
-  rgba(38, 18, 71, 1) 0%,
-  rgba(45, 25, 84, 1) 50%,
-  rgba(72, 45, 132, 1) 100%
-);
-$color-dark: rgba(33, 19, 68, 1);
 
 // Font
 $font-weight-thin: 200;
@@ -56,44 +24,23 @@ $font-size-large: 2.4rem;
 $font-size-xlarge: 4.2rem;
 $font-size-xxlarge: 5rem;
 
-$line-height-base: 2.4rem;
+// Buttons
+$btn-padding-y: 1.5rem;
+$btn-padding-x: 2rem;
+$btn-line-height: 1.1;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-disabled-opacity: 0.65 !default;
+$btn-border-radius: 2.5rem;
 
 // Content
 $section-vertical-spacing: 5rem;
 
 // Common border styles
-$slate-30-border: 0.1rem solid $color-slate-30;
-$slate-50-border: 0.1rem solid $color-slate-50;
-$primary-color-border: 0.1rem solid $color-primary;
-$secondary-color-border: 0.1rem solid $color-secondary;
-$secondary-color-border-light: 0.1rem solid $color-secondary-light;
 $border-radius: 1.5rem;
 
 // Box shadow
 $box-shadow-reg: 0px 20px 52px rgba(0, 0, 0, 0.31);
 
-// Spacing
-$spacer: 1rem !default;
-$spacers: (
-  0: 0,
-  1: $spacer / 4,
-  2: $spacer / 2,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-);
-
-
-// Grid
-$grid-columns:                12;
-$grid-row-columns:            6;
-$gutters: $spacers !default;
-$grid-gutter-width: 1.5rem;
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-);
+// Allows for single file imports in helper files
+@import "prerequisites";

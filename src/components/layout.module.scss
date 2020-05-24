@@ -17,11 +17,13 @@ $section-bottom-overlap: 18rem;
   max-width: 1200px;
   margin-bottom: $section-vertical-spacing;
 
+  .module {
+    padding-left: 2rem;
+    border-left: 0.1rem solid $gray-800
+  }
+
   .section-title {
     position: relative;
     margin-bottom: 2.5rem;
-    &__dark {
-      color: $color-slate-base;
-    }
   }
 }

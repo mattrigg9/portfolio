@@ -4,40 +4,11 @@ import moment from "moment"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-import Skill from "./skill"
 import JobPosition from "./jobPosition"
+import GitHubRepos from "./gitHubRepos"
 import layoutStyles from "../layout.module.scss"
-import styles from "./index.module.scss"
-import { FaReact, FaVuejs, FaJs, FaAws, FaNode } from "react-icons/fa"
 
 function Experience() {
-  const skills = [
-    {
-      icon: <FaAws />,
-      name: "AWS Certified Solutions Architect",
-    },
-    {
-      icon: <FaJs />,
-      name: "Javascript",
-    },
-    {
-      icon: <FaNode />,
-      name: "NodeJS",
-    },
-    {
-      icon: <FaReact />,
-      name: "React",
-    },
-    {
-      icon: <FaVuejs />,
-      name: "Vue.js",
-    },
-    {
-      icon: <FaReact />,
-      name: "React",
-    },
-  ]
-
   const logos = useStaticQuery(graphql`
     {
       amazon: file(relativePath: { eq: "logos/amazon.png" }) {
@@ -93,23 +64,19 @@ function Experience() {
 
   return (
     <section className={classNames(layoutStyles.section)}>
-      <h1 className={classNames(layoutStyles.sectionTitle)}>Experience</h1>
       <div className="row">
-        <div className="col">
-          <ul className={styles.timeline}>
+      <div className="col-12 col-md-6">
+          <h1 className={classNames(layoutStyles.sectionTitle)}>Experience</h1>
+          <ul className='no-list-style'>
             {positions.map((position, index) => (
-              <li key={index}>
+              <li key={index} className={layoutStyles.module}>
                 <JobPosition {...position} />
               </li>
             ))}
           </ul>
         </div>
-        <div className="col">
-          {/* <ul className={styles.skills}>
-            {skills.map(skill => (
-              <Skill {...skill} />
-            ))}
-          </ul> */}
+        <div className="col-12 col-md-6">
+          <GitHubRepos />
         </div>
       </div>
     </section>

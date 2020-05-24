@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import React from "react"
 import styles from "./index.module.scss"
 import GridItem from "./gridItem"

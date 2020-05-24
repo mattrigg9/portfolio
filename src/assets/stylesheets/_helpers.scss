@@ -122,3 +122,14 @@
 .shadow-reg {
   box-shadow: $box-shadow-reg;
 }
+
+.no-list-style {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a.no-link-style {
+  color: inherit;
+  text-decoration: inherit;
+}
