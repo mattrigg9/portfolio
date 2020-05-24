@@ -1,98 +1,5 @@
 @import "./_variables";
 
-.d-flex {
-  display: flex;
-}
-.d-inline {
-  display: inline;
-}
-.d-inline-block {
-  display: inline-block;
-}
-.wrap {
-  flex-wrap: wrap;
-}
-.nowrap {
-  flex-wrap: nowrap;
-}
-.flex-grow-0 {
-  flex-grow: 0;
-}
-.flex-grow-1 {
-  flex-grow: 1;
-}
-.flex-shrink-0 {
-  flex-shrink: 0;
-}
-.flex-shrink-1 {
-  flex-shrink: 1;
-}
-.direction-row {
-  flex-direction: row;
-}
-.direction-col {
-  flex-direction: column;
-}
-.direction-col-rev {
-  flex-direction: column-reverse;
-}
-.pin-start {
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.pin-center {
-  justify-content: center;
-  align-items: center;
-}
-.pin-end {
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-.align-start {
-  align-items: flex-start;
-}
-.align-center {
-  align-items: center;
-}
-.align-end {
-  align-items: flex-end;
-}
-.align-baseline {
-  align-items: baseline;
-}
-.align-self-start {
-  align-self: flex-start;
-}
-.align-self-center {
-  align-self: center;
-}
-.align-self-end {
-  align-self: flex-end;
-}
-.justify-self-start {
-  justify-self: flex-start;
-}
-.justify-self-center {
-  justify-self: center;
-}
-.justify-self-end {
-  justify-self: flex-end;
-}
-.justify-start {
-  justify-content: flex-start;
-}
-.justify-center {
-  justify-content: center;
-}
-.justify-end {
-  justify-content: flex-end;
-}
-.justify-space-between {
-  justify-content: space-between;
-}
-.justify-space-around {
-  justify-content: space-around;
-}
 .text-center {
   text-align: center;
 }
@@ -110,6 +17,19 @@
 .w-0 {
   width: 0%;
 }
+
+.text-size-small {
+  font-size: $font-size-small;
+}
+
+.text-size-medium {
+  font-size: $font-size-medium;
+}
+
+.text-size-large {
+  font-size: $font-size-large;
+}
+
 
 .text-uppercase {
   text-transform: uppercase;

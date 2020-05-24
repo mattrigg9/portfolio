@@ -6,16 +6,35 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: $gray-800;
   color: $body-color;
+
+  .content-wrapper {
+    opacity: 1;
+    transition: opacity $content-fade-duration ease-in;
+    &.hidden {
+      opacity: 0;
+    }
+  }
 }
 
 .title {
   position: absolute;
-  bottom: 20vh;
-  right: 5rem;
+  bottom: 10vh;
+  right: 3rem;
+  text-align: end;
   color: $dusk;
-  font-size: $font-size-xxlarge;
+  font-size: $font-size-xlarge;
+  max-width: 60rem;
+  @include media-breakpoint-up(md) {
+    right: 5rem;
+    bottom: 20vh;
+    font-size: $font-size-xxlarge;
+  }
+  @include media-breakpoint-up(xl) {
+    bottom: 20vh;
+    max-width: 55vw;
+    font-size: $font-size-xxxlarge;
+  }
 }
 
 .background {
@@ -35,25 +54,4 @@
   height: 100%;
   width: 100%;
   background-size: cover;
-}
-
-.hero-content-scrim {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.4);
-}
-.hero-content-scrim.hide-scrim {
-  background: transparent;
-}
-
-.hero-content {
-  max-width: 58rem;
-  padding: 0 3rem;
-  transform: translateX(3rem);
-  transition: transform 0.3s ease-in-out;
 }

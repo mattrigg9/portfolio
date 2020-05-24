@@ -8,4 +8,4 @@ fullImage: amazon-care-screen.webp
 website: https://amazon.care
 ---
 
-Matt is a Front End tech lead on new initiative within Amazon Care, a virtual healthcare benefit being piloted for Amazon employees and their families in the Seattle area.
+Currently contributing as a Front End tech lead on new initiative within Amazon Care, a virtual healthcare benefit being piloted for Amazon employees and their families in the Seattle area.

@@ -24,7 +24,10 @@ const GridItem = ({
 
   return (
     <>
-      <li className={styles.gridItem} onClick={openModal}>
+      <li className={styles.gridItem}>
+        <div onKeyPress={openModal} onClick={openModal} role="button" tabIndex="0">
+
+        
         {featuredImage && (
           <Img
             fluid={featuredImage}
@@ -37,6 +40,7 @@ const GridItem = ({
         <div className={styles.gridItemDetails}>
           <h2 className={styles.gridItemTitle}>{title}</h2>
           <div className={styles.gridItemDescription}>{shortDescription}</div>
+        </div>
         </div>
       </li>
 
@@ -52,7 +56,10 @@ const GridItem = ({
         <header className={styles.modalHeader}>
           <FaTimes
             onClick={closeModal}
+            onKeyPress={closeModal}
+            role="button"
             title="Close"
+            tabIndex="0"
             className={styles.closeButton}
           />
         </header>
@@ -60,7 +67,7 @@ const GridItem = ({
           <h1 className="mb-5">{title}</h1>
           <div className="row">
             <div className="col-12 col-lg-7">
-            <a href={website} target="_blank">
+            <a href={website} target="_blank" rel="noreferrer">
               <Img
                 fluid={fullImage}
                 alt={alt || title}
@@ -71,9 +78,9 @@ const GridItem = ({
               />
               </a>
             </div>
-            <div className="col-12 col-lg-5">
+            <div className="col-12 col-lg-5 mt-5 mt-lg-0">
               <div dangerouslySetInnerHTML={{__html: description}}></div>
-              <a href={website} target="_blank">Website</a>
+              <a href={website} target="_blank" rel="noreferrer">Website</a>
             </div>
           </div>
         </div>

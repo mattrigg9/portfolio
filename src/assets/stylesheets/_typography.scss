@@ -1,5 +1,6 @@
 @import './_variables';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -54,4 +55,7 @@ p, .p {
 }
 .font-weight-black {
     font-weight: 800;
+}
+.text-serif {
+    font-family: 'Noto Serif', serif;
 }

@@ -42,7 +42,7 @@ module.exports = {
         short_name: `Matt Rigg`,
         lang: `en`,
         start_url: `/`,
-        background_color: `#013158`,
+
         theme_color: `#ffd36b`,
         display: `minimal-ui`,
         icon: `src/assets/images/mattrigg-icon.png`,

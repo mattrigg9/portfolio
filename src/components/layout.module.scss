@@ -10,6 +10,11 @@ $section-bottom-overlap: 18rem;
   padding: 0 2rem;
   margin-top: -$section-top-overlap;
   margin-bottom: -$section-bottom-overlap; // Compensate for overflow
+  opacity: 1;
+  transition: opacity $content-fade-duration ease-in;
+  &.hidden {
+    opacity: 0;
+  }
 }
 
 .section {
@@ -19,7 +24,7 @@ $section-bottom-overlap: 18rem;
 
   .module {
     padding-left: 2rem;
-    border-left: 0.1rem solid $gray-800
+    border-left: 0.1rem solid $gray-700
   }
 
   .section-title {

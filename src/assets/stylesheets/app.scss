@@ -2,6 +2,7 @@
 @import './typography';
 @import './buttons';
 @import './helpers';
+@import './carousel';
 @import './spacing';
 @import './hamburger';
 @import './modal';
@@ -22,6 +23,10 @@ html {
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+a {
+  color: $link-color;
 }
 
 body,

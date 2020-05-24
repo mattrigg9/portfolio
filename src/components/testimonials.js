@@ -36,7 +36,7 @@ const Testimonials = () => {
       <Carousel>
         {testimonials.map(testimonial => (
           <div key={testimonial.name} className={styles.testimonial}>
-            <p className={styles.quote}>{testimonial.description}</p>
+            <p className="text-serif">{testimonial.description}</p>
             <span className="font-weight-bold">{testimonial.name}</span>
             <span>{testimonial.position}</span>
             <span>{testimonial.company}</span>

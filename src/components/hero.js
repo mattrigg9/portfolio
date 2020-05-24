@@ -1,17 +1,17 @@
-import PropTypes from "prop-types"
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import classNames from 'classnames';
 import Header from "./header"
 import styles from "./hero.module.scss"
 import BackgroundImage from "gatsby-background-image"
 
-const Hero = () => {
+const Hero = ({ onLoad, contentVisible }) => {
   const data = useStaticQuery(graphql`
     query {
       heroBackground: file(relativePath: { eq: "hero-bg.jpeg" }) {
         childImageSharp {
-          fluid(quality: 95, maxWidth: 1920) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(quality: 99, maxWidth: 1400) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -28,32 +28,20 @@ const Hero = () => {
       Tag="section"
       className={styles.container}
       fluid={data.heroBackground.childImageSharp.fluid}
+      fadeIn
+      durationFadeIn={200}
+      critical
+      onLoad={onLoad}
       alt="Mountain landscape"
     >
+      <div className={classNames(styles.contentWrapper, {
+          [styles.hidden]: !contentVisible,
+        })}>
       <Header></Header>
-
-      <h1 className={styles.title}>
-        Human-first development
-      </h1>
+      <h1 className={styles.title}>Human-first development</h1>
+      </div>
     </BackgroundImage>
   )
-}
-
-Hero.defaultProps = {
-  onLoad: () => {},
-}
-
-Hero.propTypes = {
-  autoOpenVideoModal: PropTypes.bool,
-  imageAltText: PropTypes.string,
-  headerText: PropTypes.string,
-  image: PropTypes.bool,
-  linkIcon: PropTypes.string,
-  linkText: PropTypes.string,
-  onLoad: PropTypes.func,
-  subHeaderText: PropTypes.string,
-  video: PropTypes.bool,
-  videoModalSrc: PropTypes.string,
 }
 
 export default Hero
