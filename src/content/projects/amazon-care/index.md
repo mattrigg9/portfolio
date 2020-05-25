@@ -3,8 +3,8 @@ type: project
 featured: true
 title: Amazon Care
 shortDescription: A virtual healthcare benefit being piloted for Amazon employees and their families in the Seattle area.
-featuredImage: amazon-care-screen.webp
-fullImage: amazon-care-screen.webp
+featuredImage: amazon-care-screen.png
+fullImage: amazon-care-screen.png
 website: https://amazon.care
 ---
 

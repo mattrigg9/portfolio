@@ -4,6 +4,7 @@ import layoutStyles from "./layout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import Carousel from "nuka-carousel"
 import styles from "./testimonials.module.scss"
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const Testimonials = () => {
   const queryResult = useStaticQuery(graphql`
@@ -33,7 +34,19 @@ const Testimonials = () => {
   return (
     <section className={classNames(layoutStyles.section)}>
       <h1 className={classNames(layoutStyles.sectionTitle)}>Testimonials</h1>
-      <Carousel>
+      <Carousel
+        className="carousel"
+        renderCenterLeftControls={({ previousSlide }) => (
+          <button className="btn btn-link slide-control" onClick={previousSlide}>
+            <FaAngleLeft />
+          </button>
+        )}
+        renderCenterRightControls={({ nextSlide }) => (
+          <button className="btn btn-link slide-control" onClick={nextSlide}>
+            <FaAngleRight />
+          </button>
+        )}
+      >
         {testimonials.map(testimonial => (
           <div key={testimonial.name} className={styles.testimonial}>
             <p className="text-serif">{testimonial.description}</p>

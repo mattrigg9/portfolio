@@ -6,6 +6,13 @@
   margin: 0;
   user-select: none;
   cursor: pointer;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
 
   .grid-item-image {
     width: 100%;
@@ -52,7 +59,7 @@ $modal-viewport-padding-mobile: 1.5rem;
 .modal {
   box-shadow: $box-shadow-reg;
   border-radius: $border-radius;
-  padding: 3rem;
+  padding: 2rem;
   position: absolute;
   border: 0.1rem solid $gray-800;
   background: $dusk;
@@ -67,16 +74,19 @@ $modal-viewport-padding-mobile: 1.5rem;
   bottom: $modal-viewport-padding-mobile;
 
   @include media-breakpoint-up(md) {
+    padding: 3rem;
     max-width: 100rem;
     top: $modal-viewport-padding;
     left: $modal-viewport-padding;
     right: $modal-viewport-padding;
     bottom: $modal-viewport-padding;
-  
   }
 
   .modal-content {
-    padding: 3rem;
+    padding: 1rem;
+    @include media-breakpoint-up(md) {
+      padding: 3rem;
+    }
   }
 
   .modal-header {
@@ -84,8 +94,8 @@ $modal-viewport-padding-mobile: 1.5rem;
     justify-content: flex-end;
     .close-button {
       cursor: pointer;
-      width: 3rem;
-      height: 3rem;
+      width: 3.5rem;
+      height: 3.5rem;
     }
   }
 }

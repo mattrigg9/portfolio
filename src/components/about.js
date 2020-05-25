@@ -49,7 +49,7 @@ const About = () => {
             />
           </div>
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 mt-4 mt-md-0">
           <Img
             fluid={queryResults.headshot.childImageSharp.fluid}
             className="rounded shadow-reg"

@@ -1,4 +1,26 @@
+@import "variables";
+
+// TODO: Migrate to HOC
 .slider-slide {
-    position: relative;
-    outline: none;
+  position: relative;
+  outline: none;
+}
+.carousel {
+  @include media-breakpoint-down(sm) {
+    .slider-control-centerright {
+      right: -2rem !important; // Override inline element styles
+    }
+    .slider-control-centerleft {
+      left: -2rem !important; // Override inline element styles
+    }
+  }
+  .paging-item {
+    button {
+      fill: $body-color !important; // Override inline element styles
+    }
+  }
+  .slide-control {
+    color: $body-color;
+    font-size: 2.5rem;
+  }
 }

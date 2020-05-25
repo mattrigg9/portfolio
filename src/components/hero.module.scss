@@ -19,12 +19,14 @@
 
 .title {
   position: absolute;
-  bottom: 10vh;
-  right: 3rem;
   text-align: end;
   color: $dusk;
-  font-size: $font-size-xlarge;
   max-width: 60rem;
+
+  // Viewport-specific layout
+  font-size: $font-size-xlarge;
+  bottom: 26vh;
+  right: 2rem;
   @include media-breakpoint-up(md) {
     right: 5rem;
     bottom: 20vh;

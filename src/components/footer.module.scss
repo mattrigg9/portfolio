@@ -1,7 +1,7 @@
 @import "../assets/stylesheets/_variables";
 
 .container {
-  margin-top: 5rem;
+  margin-top: 12rem;
   background-color: $gray-900;
   width: 100%;
   height: 40rem;
@@ -10,6 +10,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @include media-breakpoint-up(md) {
+    margin-top: 5rem;
+  }
 
   .title {
     text-align: center;
@@ -22,11 +25,21 @@
     margin: 0;
     padding: 0;
     li {
-      display: inline;
+      text-align: center;
       padding: 0 0.5rem;
+      font-size: 1.8rem;
       &:not(:last-child):after {
         content: " \00b7";
-        padding-left: 0.5rem;
+        display: block;
+        color: $gray-600;
+      }
+      @include media-breakpoint-up(md) {
+        display: inline;
+        &:not(:last-child):after {
+          content: " \00b7";
+          display: inline;
+          padding-left: 0.5rem;
+        }
       }
       a {
         text-decoration: none;
