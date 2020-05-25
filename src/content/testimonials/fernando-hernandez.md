@@ -1,6 +1,6 @@
 ---
 type: testimonial
-name: Fernando Hernandez
+name: Coworker
 position: Front End Engineer II
 company:  Amazon
 ---

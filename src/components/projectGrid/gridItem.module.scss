@@ -50,7 +50,7 @@
 
 // TODO: Migrate modal implementation to HOC
 $modal-viewport-padding: 5rem;
-$modal-viewport-padding-mobile: 1.5rem;
+$modal-viewport-padding-mobile: 0;
 .modal-overlay {
   position: fixed;
   inset: 0rem;
@@ -60,7 +60,7 @@ $modal-viewport-padding-mobile: 1.5rem;
   box-shadow: $box-shadow-reg;
   border-radius: $border-radius;
   padding: 2rem;
-  position: absolute;
+  position: fixed;
   border: 0.1rem solid $gray-800;
   background: $dusk;
   overflow: auto;

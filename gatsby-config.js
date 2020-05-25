@@ -16,6 +16,12 @@ module.exports = {
     `gatsby-plugin-offline`,
     ...githubConfig.plugins,
     {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "mattrigg-portfolio",
+      },
+    },
+    {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: aliases,
