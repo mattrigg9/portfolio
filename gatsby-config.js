@@ -4,7 +4,7 @@ const aliases = require("./config/alias")
 module.exports = {
   siteMetadata: {
     title: `Matt Rigg`,
-    description: "Building all of what you need, none of what you don't.",
+    description: "Building applications for humans.",
     author: `@mattrigg9`,
   },
   plugins: [
@@ -13,12 +13,28 @@ module.exports = {
     `gatsby-plugin-sharp`,
     "gatsby-plugin-sass",
     `gatsby-transformer-remark`,
+    `gatsby-plugin-offline`,
     ...githubConfig.plugins,
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
         alias: aliases,
         extensions: ["js", "json"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Noto Serif`,
+            variants: [`400`]
+          },
+          {
+            family: `Open Sans`,
+            variants: [`300`, `400`, `700`, `800`]
+          },
+        ],
       },
     },
     {
@@ -42,8 +58,8 @@ module.exports = {
         short_name: `Matt Rigg`,
         lang: `en`,
         start_url: `/`,
-
-        theme_color: `#ffd36b`,
+        background_color: `#343447`,
+        theme_color: `#272736`,
         display: `minimal-ui`,
         icon: `src/assets/images/mattrigg-icon.png`,
       },
@@ -54,8 +70,5 @@ module.exports = {
         trackingId: "UA-167538745-1",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }
