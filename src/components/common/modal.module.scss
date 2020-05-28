@@ -1,0 +1,50 @@
+$modal-viewport-padding: 5rem;
+$modal-viewport-padding-mobile: 0;
+.modal-overlay {
+  position: fixed;
+  inset: 0rem;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+.modal {
+  box-shadow: $box-shadow-reg;
+  border-radius: $border-radius;
+  padding: 2rem;
+  position: fixed;
+  border: 0.1rem solid $gray-800;
+  background: $dusk;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  max-width: 100%;
+  margin: 0 auto;
+  top: $modal-viewport-padding-mobile;
+  left: $modal-viewport-padding-mobile;
+  right: $modal-viewport-padding-mobile;
+  bottom: $modal-viewport-padding-mobile;
+
+  @include media-breakpoint-up(md) {
+    padding: 3rem;
+    max-width: 100rem;
+    top: $modal-viewport-padding;
+    left: $modal-viewport-padding;
+    right: $modal-viewport-padding;
+    bottom: $modal-viewport-padding;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    @include media-breakpoint-up(md) {
+      padding: 3rem;
+    }
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+    .close-button {
+      cursor: pointer;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+}
