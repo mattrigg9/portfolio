@@ -1,0 +1,36 @@
+@import "../assets/stylesheets/_variables";
+
+$section-top-overlap: 5rem;
+$section-bottom-overlap: 13rem;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  margin-top: -$section-top-overlap;
+  opacity: 1;
+  transition: opacity $content-fade-duration ease-in;
+  @include media-breakpoint-up(md) {
+    margin-bottom: -$section-bottom-overlap; // Compensate for overflow
+  }
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: $section-vertical-spacing;
+
+  .module {
+    padding-left: 2rem;
+    border-left: 0.1rem solid $gray-700
+  }
+
+  .section-title {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+}

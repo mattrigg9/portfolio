@@ -1,12 +1,13 @@
 import React from "react"
 import classNames from "classnames"
-import layoutStyles from "./layout.module.scss"
+import layoutStyles from "./homeLayout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import Carousel from "./common/carousel";
 import styles from "./testimonials.module.scss"
 
 const Testimonials = () => {
-  const queryResult = useStaticQuery(graphql`
+  const queryResult = useStaticQuery(
+    graphql`
     {
       allMarkdownRemark(
         filter: { frontmatter: { type: { eq: "testimonial" } } }

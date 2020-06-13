@@ -2,7 +2,8 @@ import React from "react"
 import classNames from "classnames"
 import Img from "gatsby-image"
 import styles from "./gridItem.module.scss"
-import Modal from "../common/modal"
+import Modal from "react-modal"
+import BaseModal from "../common/modal"
 
 // http://reactcommunity.org/react-modal/accessibility/
 Modal.setAppElement("#___gatsby")
@@ -45,7 +46,7 @@ const GridItem = ({
           </div>
         </div>
       </li>
-      <Modal
+      <BaseModal
         isOpen={modalIsOpen}
         onClose={closeModal}
         contentLabel={`${title} details`}
@@ -71,7 +72,7 @@ const GridItem = ({
             </a>
           </div>
         </div>
-      </Modal>
+      </BaseModal>
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from "react"
 import styles from "./footer.module.scss"
 import links from 'config/links';
+import { Link } from 'gatsby';
 
 // TODO: Query data from structured config
 const Footer = () => {
@@ -9,9 +10,9 @@ const Footer = () => {
       <h1 className={styles.title}>Matt Rigg</h1>
       <ul className={styles.links}>
         <li>
-          <a href={links.linkedIn} target="_blank" rel="noreferrer">
+          <Link to="/contact">
             Contact
-          </a>
+          </Link>
         </li>
 
         <li>

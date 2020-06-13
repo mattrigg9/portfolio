@@ -1,8 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import classNames from "classnames"
-import layoutStyles from "./layout.module.scss"
+import layoutStyles from "./homeLayout.module.scss"
 import styles from "./contactCTA.module.scss"
-import links from "config/links"
 
 function ContactCTA() {
   return (
@@ -15,15 +15,9 @@ function ContactCTA() {
             Interested in working together? Let's have a chat. I’ll buy the
             coffee.
           </p>
-          <a
-            href={links.linkedIn}
-            className="btn btn-outline-dark cta no-link-style"
-            role="button"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <Link to="/contact" className="btn btn-outline-dark cta no-link-style">
             Let's do this
-          </a>
+          </Link>
       </div>
     </section>
   )

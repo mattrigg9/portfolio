@@ -1,15 +1,17 @@
-@import './variables';
-@import './typography';
-@import './buttons';
-@import './helpers';
-@import './carousel';
-@import './spacing';
-@import './hamburger';
-@import './modal';
+@import "./variables";
+@import "./typography";
+@import "./buttons";
+@import "./helpers";
+@import "./carousel";
+@import "./spacing";
+@import "./hamburger";
+@import "./modal";
+@import "./animations";
 
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/forms";
 
 /* Reset and defaults */
 html {
@@ -21,7 +23,9 @@ html {
   overflow-y: auto;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -33,7 +37,7 @@ body,
 html,
 #___gatsby,
 #gatsby-focus-wrapper {
-  background-color: $dusk;
+  background-color: $body-background-color;
   min-height: 100%;
   min-width: 100%;
 }
@@ -47,7 +51,13 @@ body {
   overflow-x: hidden;
 }
 
-article, aside, footer, header, main, nav, section {
+article,
+aside,
+footer,
+header,
+main,
+nav,
+section {
   display: block;
 }
 
@@ -67,9 +77,25 @@ input,
 label,
 select,
 textarea {
-  font-family: 'Open Sans', 'Helvetica Neue',
-  'Helvetica', 'Arial', sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.form-group {
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    background-color: darken($body-background-color, 3%);
+    border-color: $primary;
+    &:focus,
+    &:-webkit-autofill {
+      border-color: lighten($primary, 5%);
+      background-color: lighten($body-background-color, 3%);
+    }
+  }
 }
 
 .container {

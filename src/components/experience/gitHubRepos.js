@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import classNames from "classnames"
-import layoutStyles from "../layout.module.scss"
+import layoutStyles from "../homeLayout.module.scss"
 import { author as gitHubAuthor } from "config/github"
 
 const RepoInfo = ({ name, url, description }) => {

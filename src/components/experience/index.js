@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import Employment from "./employment"
 import GitHubRepos from "./gitHubRepos"
-import layoutStyles from "../layout.module.scss"
+import layoutStyles from "../homeLayout.module.scss"
 
 function Experience() {
   return (

@@ -7,11 +7,13 @@ $gold-sun: #ffd36b;
 $peach: #f2af87;
 $morning-sun: #fdcf80;
 
-$primary: #c1a1e8;
+$primary: $morning-sky;
 $secondary: #878ee8;
+$warning: $morning-sun;
 
 $link-color: $secondary;
 $body-color: $muted-sky;
+$body-background-color: $dusk;
 
 // Font
 $font-weight-thin: 200;
@@ -39,8 +41,15 @@ $btn-border-radius: 2.5rem;
 // Content
 $section-vertical-spacing: 5rem;
 
-// Common border styles
+// Border radius
 $border-radius: 1.5rem;
+$input-border-radius: 1rem;
+
+// Form
+$input-color: #fff;
+$input-focus-box-shadow: none;
+$input-padding-x: 1rem;
+$input-padding-y: 1rem;
 
 // Box shadow
 $box-shadow-reg: 0px 20px 52px rgba(0, 0, 0, 0.31);

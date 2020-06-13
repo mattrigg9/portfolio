@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import moment from "moment"
 import Img from "gatsby-image"
 import classNames from "classnames"
-import layoutStyles from "../layout.module.scss"
+import layoutStyles from "../homeLayout.module.scss"
 
 
 const TimeRange = ({ startTime, endTime }) => {

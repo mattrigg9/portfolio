@@ -1,44 +1,35 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import classNames from 'classnames';
+import classNames from "classnames"
 import Header from "./header"
 import styles from "./hero.module.scss"
 import BackgroundImage from "gatsby-background-image"
 
-const Hero = ({ onLoad, contentVisible }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      heroBackground: file(relativePath: { eq: "hero-bg.jpeg" }) {
-        childImageSharp {
-          fluid(quality: 99, maxWidth: 1400) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+const Hero = ({
+  onLoad,
+  contentVisible = true,
+  title,
+  className,
+  titleClassName,
+  backgroundFluid,
+}) => {
   return (
     <BackgroundImage
       Tag="section"
-      className={styles.container}
-      fluid={data.heroBackground.childImageSharp.fluid}
+      className={className}
+      fluid={backgroundFluid}
       fadeIn
       durationFadeIn={200}
       critical
       onLoad={onLoad}
-      alt="Mountain landscape"
+      alt={title}
     >
-      <div className={classNames(styles.contentWrapper, {
+      <div
+        className={classNames(styles.contentWrapper, {
           [styles.hidden]: !contentVisible,
-        })}>
-      <Header></Header>
-      <h1 className={styles.title}>Human-first development</h1>
+        })}
+      >
+        <Header />
+        <h1 className={titleClassName}>{title}</h1>
       </div>
     </BackgroundImage>
   )

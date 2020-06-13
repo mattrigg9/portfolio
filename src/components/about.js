@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import layoutStyles from "./layout.module.scss"
+import layoutStyles from "./homeLayout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 

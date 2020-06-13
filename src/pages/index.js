@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import HomeLayout from "../components/homeLayout"
 import Experience from "../components/experience"
 import Testimonials from "../components/testimonials"
 import About from "../components/about"
@@ -9,23 +9,14 @@ import FeaturedProjects from "../components/featuredProjects"
 import ContactCTA from "../components/contactCTA"
 
 const IndexPage = () => (
-  <Layout>
+  <HomeLayout>
     <SEO title="Application development for humans" />
-
     <FeaturedProjects />
     <About />
     <Experience />
     <Testimonials />
-
-    {/* 
-TODO: 
-- Projects at Amazon
-- About me section
-- Education
-
-*/}
     <ContactCTA />
-  </Layout>
+  </HomeLayout>
 )
 
 export default IndexPage

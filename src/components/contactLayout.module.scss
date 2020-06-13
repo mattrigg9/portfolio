@@ -1,15 +1,11 @@
 @import "../assets/stylesheets/_variables";
 
-$section-top-overlap: 5rem;
-$section-bottom-overlap: 18rem;
-
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
-  margin-top: -$section-top-overlap;
-  margin-bottom: -$section-bottom-overlap; // Compensate for overflow
+  width: 100%;
+  padding: 5rem 2rem;
   opacity: 1;
   transition: opacity $content-fade-duration ease-in;
   &.hidden {
@@ -18,8 +14,6 @@ $section-bottom-overlap: 18rem;
 }
 
 .section {
-  width: 100%;
-  max-width: 1200px;
   margin-bottom: $section-vertical-spacing;
 
   .module {

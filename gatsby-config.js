@@ -4,7 +4,7 @@ const aliases = require("./config/alias")
 module.exports = {
   siteMetadata: {
     title: `Matt Rigg`,
-    description: "Building applications for humans.",
+    description: "Application development for humans.",
     author: `@mattrigg9`,
   },
   plugins: [

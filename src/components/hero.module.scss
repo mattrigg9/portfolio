@@ -1,59 +1,9 @@
 @import "../assets/stylesheets/_variables";
 
-.container {
-  position: relative;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  color: $body-color;
-
-  .content-wrapper {
-    opacity: 1;
-    transition: opacity $content-fade-duration ease-in;
-    &.hidden {
-      opacity: 0;
-    }
+.content-wrapper {
+  opacity: 1;
+  transition: opacity $content-fade-duration ease-in;
+  &.hidden {
+    opacity: 0;
   }
-}
-
-.title {
-  position: absolute;
-  text-align: end;
-  color: $dusk;
-  max-width: 60rem;
-
-  // Viewport-specific layout
-  font-size: $font-size-xlarge;
-  bottom: 26vh;
-  right: 2rem;
-  @include media-breakpoint-up(md) {
-    right: 5rem;
-    bottom: 20vh;
-    font-size: $font-size-xxlarge;
-  }
-  @include media-breakpoint-up(xl) {
-    bottom: 20vh;
-    max-width: 55vw;
-    font-size: $font-size-xxxlarge;
-  }
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.hero-image img {
-  object-fit: cover;
-  object-position: 85% 0%;
-  font-family: "object-fit: contain; object-position: 85% 0%";
-  position: relative;
-  height: 100%;
-  width: 100%;
-  background-size: cover;
 }

@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import { useStaticQuery, graphql } from "gatsby"
 import ProjectGrid from "./projectGrid"
-import layoutStyles from "./layout.module.scss"
+import layoutStyles from "./homeLayout.module.scss"
 
 const FeaturedProjects = () => {
   const queryResult = useStaticQuery(graphql`
