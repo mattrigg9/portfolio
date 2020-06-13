@@ -9,7 +9,8 @@ exports.createPages = async ({ actions }) => {
   const { createPage } = actions
   const contactPage = path.resolve(`src/pages/contact.js`)
   createPage({
-    path: `/contact`,
+    path: `/contact/`,
     component: contactPage,
+    context: {}
   })
 }

@@ -38,7 +38,7 @@ module.exports = {
           },
           {
             family: `Open Sans`,
-            variants: [`300`, `400`, `700`, `800`]
+            variants: [`300`, `400`, `700`]
           },
         ],
       },

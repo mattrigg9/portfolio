@@ -80,7 +80,6 @@ function ContactForm() {
                     Name
                   </label>
                   <input
-                    aria-describedby="Name"
                     aria-labelledby="nameLabel"
                     aria-required
                     className="form-control"
@@ -98,7 +97,6 @@ function ContactForm() {
                     Email
                   </label>
                   <input
-                    aria-describedby="emailHelp"
                     aria-labelledby="emailLabel"
                     aria-required
                     className="form-control"
@@ -122,7 +120,6 @@ function ContactForm() {
                     Message
                   </label>
                   <textarea
-                    aria-describedby="Message to Send"
                     aria-labelledby="messageLabel"
                     aria-required
                     className="form-control"
