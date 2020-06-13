@@ -4,7 +4,7 @@ import Modal from "react-modal"
 import { FaTimes } from "react-icons/fa"
 import styles from "./modal.module.scss"
 
-function Modal({ isOpen, onClose, contentLabel }) {
+function BaseModal({ isOpen, onClose, contentLabel, children }) {
   return (
     <Modal
       closeTimeoutMS={200}
@@ -30,10 +30,10 @@ function Modal({ isOpen, onClose, contentLabel }) {
   )
 }
 
-Modal.propTypes = {
+BaseModal.propTypes = {
   onClose: PropTypes.func,
   isOpen: PropTypes.bool,
   children: PropTypes.node.isRequired,
 }
 
-export default Modal
+export default BaseModal

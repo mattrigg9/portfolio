@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Carousel from "nuka-carousel"
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
 
-const Carousel = () => {
+const BaseCarousel = ({ children }) => {
   return (
     <Carousel
       className="carousel"
@@ -31,8 +31,8 @@ const Carousel = () => {
   )
 }
 
-Carousel.propTypes = {
+BaseCarousel.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Carousel
+export default BaseCarousel

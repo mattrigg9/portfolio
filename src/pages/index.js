@@ -10,7 +10,7 @@ import ContactCTA from "../components/contactCTA"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Human-first development" />
+    <SEO title="Application development for humans" />
 
     <FeaturedProjects />
     <About />
