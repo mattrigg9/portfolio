@@ -42,8 +42,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "export AWS_PROFILE=portfolio && gatsby-plugin-s3 deploy --yes && aws cloudfront create-invalidation --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
+    "build": "gatsby clean && gatsby build",
+    "deploy": "export AWS_PROFILE=portfolio && aws s3 sync ./public s3://mattrigg-portfolio --profile portfolio && aws cloudfront create-invalidation --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",

@@ -1,6 +1,7 @@
 import React from "react"
 import ReactCSSTransitionGroup from "react-addons-css-transition-group"
-import { FaCheckCircle } from "react-icons/fa"
+import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"
+import links from "config/links"
 import { Link } from "gatsby"
 
 const FORM_URL = "https://formspree.io/xgenypqq"
@@ -20,11 +21,13 @@ const postData = async (url, data = {}) =>
 function ContactForm() {
   const initialFormData = {
     name: "",
-    email: "",
+    _replyto: "",
     message: "",
   }
   const [formData, updateFormData] = React.useState(initialFormData)
+  const [submitting, updateSubmittingStatus] = React.useState(false)
   const [submitted, updateSubmissionStatus] = React.useState(false)
+  const [hasError, updateErrorStatus] = React.useState(false)
 
   const handleChange = e => {
     updateFormData({
@@ -35,8 +38,11 @@ function ContactForm() {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    await postData(FORM_URL, formData)
-    updateSubmissionStatus(true)
+    updateErrorStatus(false) // Reset error status
+    updateSubmittingStatus(true)
+    const response = await postData(FORM_URL, formData)
+    response.ok ? updateSubmissionStatus(true) : updateErrorStatus(true)
+    updateSubmittingStatus(false)
   }
 
   return (
@@ -46,6 +52,19 @@ function ContactForm() {
         transitionLeaveTimeout={200}
         transitionEnterTimeout={200}
       >
+        {hasError && (
+          <div className="d-flex flex-column align-items-center my-8">
+            <FaExclamationCircle className="text-warning" size="8rem" />
+            <h3 className="mt-4">Oops!</h3>
+            <p className="text-center">
+              Sorry, something went wrong. Please try again or contact me
+              directly through{" "}
+              <a href={links.linkedIn} target="_blank" rel="noreferrer">
+                LinkedIn
+              </a>
+            </p>
+          </div>
+        )}
         {submitted && (
           <div className="d-flex flex-column align-items-center my-8">
             <FaCheckCircle className="text-success" size="8rem" />
@@ -132,7 +151,7 @@ function ContactForm() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary cta mt-3">
+            <button disabled={submitting} type="submit" className="btn btn-primary cta mt-3">
               Send Message
             </button>
           </form>
