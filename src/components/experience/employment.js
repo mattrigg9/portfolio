@@ -5,7 +5,6 @@ import Img from "gatsby-image"
 import classNames from "classnames"
 import layoutStyles from "../homeLayout.module.scss"
 
-
 const TimeRange = ({ startTime, endTime }) => {
   const formattedStartTime = startTime.format("MMM YYYY")
   const formattedEndTime = endTime ? endTime.format("MMM YYYY") : "Present"
@@ -19,7 +18,7 @@ const TimeRange = ({ startTime, endTime }) => {
 const Duration = ({ duration }) => {
   return (
     <span>
-      {duration.years()}y, {duration.months()}mo
+      {duration.years()}y{!!duration.months() && `, ${duration.months()}mo`}
     </span>
   )
 }
@@ -99,7 +98,7 @@ const Employment = () => {
       startTime: moment("2014-06-05"),
       endTime: undefined,
       description:
-        "Working across four separate teams at Amazon, I have launched products that have scaled to millions of users.",
+        "As a veteran engineer at Amazon, I have launched multiple high-profile products that have scaled to millions of users.",
     },
     {
       employer: "Competition Specialties",
@@ -108,7 +107,7 @@ const Employment = () => {
       startTime: moment("2011-05-01"),
       endTime: moment("2014-06-05"),
       description:
-        "Lead the rebuild of Competition Specialties' online shopping experience.",
+        "Lead engineer to rebuild Competition Specialties' online shopping experience.",
     },
     {
       employer: "University of Washington",
@@ -125,7 +124,10 @@ const Employment = () => {
       <h1 className={classNames(layoutStyles.sectionTitle)}>Experience</h1>
       <ul className="no-list-style">
         {positions.map((position, index) => (
-          <li key={index} className={classNames(layoutStyles.module, "py-2 my-5")}>
+          <li
+            key={index}
+            className={classNames(layoutStyles.module, "py-2 my-5")}
+          >
             <JobPosition {...position} />
           </li>
         ))}

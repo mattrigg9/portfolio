@@ -34,7 +34,7 @@ const About = () => {
       <h1 className={classNames(layoutStyles.sectionTitle)}>About Matt</h1>
       <div className="row">
         <div className="col-12 col-md-6">
-          <div
+          <article
             dangerouslySetInnerHTML={{
               __html: queryResults.markdownRemark.html,
             }}
