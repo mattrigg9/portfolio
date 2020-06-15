@@ -16,17 +16,17 @@
   max-width: 60rem;
 
   // Viewport-specific layout
-  font-size: $font-size-xlarge;
+  font-size: $display-size-xlarge;
   bottom: 26vh;
   right: 2rem;
   @include media-breakpoint-up(md) {
     right: 5rem;
     bottom: 20vh;
-    font-size: $font-size-xxlarge;
+    font-size: $display-size-xxlarge;
   }
   @include media-breakpoint-up(xl) {
     bottom: 20vh;
     max-width: 55vw;
-    font-size: $font-size-xxxlarge;
+    font-size: $display-size-xxxlarge;
   }
 }

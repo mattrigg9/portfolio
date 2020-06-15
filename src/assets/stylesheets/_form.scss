@@ -1,0 +1,18 @@
+@import "./variables";
+
+.form-group {
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    background-color: darken($body-background-color, 3%);
+    border-color: $primary;
+    &:focus,
+    &:-webkit-autofill {
+      border-color: lighten($primary, 5%);
+      background-color: lighten($body-background-color, 3%);
+    }
+  }
+}

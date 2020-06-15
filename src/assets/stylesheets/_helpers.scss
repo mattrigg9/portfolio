@@ -1,49 +1,6 @@
 @import "./_variables";
 
-.text-center {
-  text-align: center;
-}
-
-.p-relative {
-  position: relative;
-}
-
-.w-100 {
-  width: 100%;
-}
-.w-50 {
-  width: 50%;
-}
-.w-0 {
-  width: 0%;
-}
-
-.text-size-small {
-  font-size: $font-size-small;
-}
-
-.text-size-medium {
-  font-size: $font-size-medium;
-}
-
-.text-size-large {
-  font-size: $font-size-large;
-}
-
-
-.text-uppercase {
-  text-transform: uppercase;
-}
-
-.rounded {
-  border-radius: $border-radius;
-}
-
-.shadow-reg {
-  box-shadow: $box-shadow-reg;
-}
-
-.no-list-style {
+ul.no-list-style {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -52,4 +9,15 @@
 a.no-link-style {
   color: inherit;
   text-decoration: inherit;
+  &:hover {
+    text-decoration: inherit;
+  }
+}
+
+.font-size-small {
+  font-size: $font-size-sm;
+}
+
+.font-size-large {
+  font-size: $font-size-lg;
 }

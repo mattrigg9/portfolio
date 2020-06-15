@@ -29,7 +29,7 @@
       transform: scale(1.01);
     }
     &__shadow {
-      box-shadow: $box-shadow-reg;
+      box-shadow: $box-shadow;
     }
   }
 
@@ -40,10 +40,5 @@
       color: inherit;
       font-weight: 700;
     }
-  }
-
-  .grid-item-description {
-    font-weight: 300;
-    font-size: $font-size-small;
   }
 }

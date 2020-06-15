@@ -3,6 +3,7 @@ import classNames from "classnames"
 import layoutStyles from "./homeLayout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styles from './about.module.scss';
 
 const About = () => {
   const queryResults = useStaticQuery(graphql`
@@ -35,6 +36,7 @@ const About = () => {
       <div className="row">
         <div className="col-12 col-md-6">
           <article
+          class={styles.articleContent}
             dangerouslySetInnerHTML={{
               __html: queryResults.markdownRemark.html,
             }}
@@ -52,7 +54,7 @@ const About = () => {
         <div className="col-12 col-md-6 mt-4 mt-md-0">
           <Img
             fluid={queryResults.headshot.childImageSharp.fluid}
-            className="rounded shadow-reg"
+            className="rounded shadow"
           />
         </div>
       </div>

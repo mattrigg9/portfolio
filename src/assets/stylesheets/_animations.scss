@@ -15,3 +15,7 @@
   opacity: 0.01;
   transition: opacity 300ms ease-in;
 }
+
+a.hover-fade {
+  transition: color 100ms ease-in-out;
+}

@@ -7,13 +7,13 @@ import { author as gitHubAuthor } from "config/github"
 const RepoInfo = ({ name, url, description }) => {
   return (
     <>
-      <h3 className="text-size-medium">
-        <a href={url} className="no-link-style">
+      <h5 class="no-link-style">
+        <a href={url} className="no-link-style hover-fade">
           <span className="font-weight-light">{gitHubAuthor}/</span>
           {name}
         </a>
-      </h3>
-      <p className="text-size-small">{description}</p>
+      </h5>
+      <p className="font-size-small">{description}</p>
     </>
   )
 }

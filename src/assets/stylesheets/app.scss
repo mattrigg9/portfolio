@@ -3,34 +3,21 @@
 @import "./buttons";
 @import "./helpers";
 @import "./carousel";
-@import "./spacing";
-@import "./hamburger";
 @import "./modal";
+@import "./form";
 @import "./animations";
 
+@import "~bootstrap/scss/reboot";
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/type";
 
-/* Reset and defaults */
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
+  font-size: 10px;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-a {
-  color: $link-color;
 }
 
 body,
@@ -40,69 +27,6 @@ html,
   background-color: $body-background-color;
   min-height: 100%;
   min-width: 100%;
-}
-
-body {
-  font-size: $font-size-base;
-  font-weight: $font-weight-base;
-  line-height: $line-height-base;
-  color: $muted-sky;
-  margin: 0 !important;
-  overflow-x: hidden;
-}
-
-article,
-aside,
-footer,
-header,
-main,
-nav,
-section {
-  display: block;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
-svg {
-  overflow: hidden;
-  vertical-align: middle;
-}
-
-body,
-button,
-input,
-label,
-select,
-textarea {
-  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-.form-group {
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .form-control {
-    background-color: darken($body-background-color, 3%);
-    border-color: $primary;
-    &:focus,
-    &:-webkit-autofill {
-      border-color: lighten($primary, 5%);
-      background-color: lighten($body-background-color, 3%);
-    }
-  }
-}
-
-.container {
-  width: 100%;
-  max-width: 140rem;
-  margin: 0 auto;
-  padding: 0;
 }
 
 #gatsby-noscript {

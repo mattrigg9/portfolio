@@ -8,10 +8,10 @@ function Experience() {
   return (
     <section className={classNames(layoutStyles.section)}>
       <div className="row">
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-lg-6">
           <Employment />
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-lg-6">
           <GitHubRepos />
         </div>
       </div>

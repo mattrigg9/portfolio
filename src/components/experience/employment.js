@@ -46,7 +46,7 @@ const JobPosition = ({
       </div>
       <div className="row">
         <div className="col">
-          <h3 className=" m-0">{position}</h3>
+          <h6 className=" m-0">{position}</h6>
           <p className="text-size-small">{employer}</p>
         </div>
         <div className="col text-size-small">

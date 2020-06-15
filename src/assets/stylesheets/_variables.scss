@@ -1,10 +1,6 @@
-// TODO: Refine Color palette
 $dusk: #272736;
 $morning-sky: #a8dafd;
 $muted-sky: #a9bedb;
-$deep-navy: #013158;
-$gold-sun: #ffd36b;
-$peach: #f2af87;
 $morning-sun: #fdcf80;
 
 $primary: $morning-sky;
@@ -16,18 +12,16 @@ $body-color: $muted-sky;
 $body-background-color: $dusk;
 
 // Font
-$font-weight-light: 300;
-$font-weight-base: 400;
-$font-weight-bold: 700;
-
-$font-size-xsmall: 1.2rem;
-$font-size-small: 1.4rem;
+$font-size-root: 10px;
 $font-size-base: 1.6rem;
-$font-size-medium: 1.8rem;
-$font-size-large: 2.4rem;
-$font-size-xlarge: 4.2rem;
-$font-size-xxlarge: 5rem;
-$font-size-xxxlarge: 6rem;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-weight:  700;
+$display-font-weight: 700;
+$display-size-large: 2.4rem;
+$display-size-xlarge: 4.2rem;
+$display-size-xxlarge: 5rem;
+$display-size-xxxlarge: 6rem;
 
 // Buttons
 $btn-padding-y: 1.5rem;
@@ -51,7 +45,7 @@ $input-padding-x: 1rem;
 $input-padding-y: 1rem;
 
 // Box shadow
-$box-shadow-reg: 0px 20px 52px rgba(0, 0, 0, 0.31);
+$box-shadow: 0px 20px 52px rgba(0, 0, 0, 0.31);
 
 // Cold start load
 $content-fade-duration: 1s;

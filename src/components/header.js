@@ -18,7 +18,7 @@ const Header = () => {
       <nav className={styles.nav}>
         <div className={styles.navLogo}>
           <h2 className={styles.navTitle}>
-            <Link to="/" className="no-link-style">
+            <Link to="/" className="no-link-style hover-fade">
               {queryResults.site.siteMetadata.title}
             </Link>
           </h2>
