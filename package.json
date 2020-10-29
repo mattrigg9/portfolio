@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Matt Rigg <mattrigg94@gmail.com>",
   "dependencies": {
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
     "gatsby": "^2.24.11",
     "gatsby-background-image": "^1.1.1",
