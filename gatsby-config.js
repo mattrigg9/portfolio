@@ -29,19 +29,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Noto Serif`,
-            variants: [`400`]
-          },
-          {
-            family: `Open Sans`,
-            variants: [`300`, `400`, `700`]
-          },
+          `Noto Serif\:400`,
+          `Open Sans\:300,400,700,`
         ],
-      },
+        display: 'swap'
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,

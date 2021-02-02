@@ -14,9 +14,6 @@ $section-bottom-overlap: 12rem;
   @include media-breakpoint-up(md) {
     margin-bottom: -$section-bottom-overlap; // Compensate for overflow
   }
-  &.hidden {
-    opacity: 0;
-  }
 }
 
 .section {

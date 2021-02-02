@@ -36,7 +36,7 @@ const About = () => {
       <div className="row">
         <div className="col-12 col-md-7">
           <article
-          class={styles.articleContent}
+          className={styles.articleContent}
             dangerouslySetInnerHTML={{
               __html: queryResults.markdownRemark.html,
             }}

@@ -27,9 +27,7 @@ const ContactLayout = ({ children }) => {
         className={heroStyles.container}
         titleClassName={heroStyles.title}
       />
-      <noscript key="noscript" id="gatsby-noscript">
-        This app works best with JavaScript enabled.
-      </noscript>
+      <noscript key="noscript" id="gatsby-noscript">This website works best with JavaScript enabled.</noscript>
       <main className={classNames(styles.content)}>{children}</main>
       <Footer />
     </>
