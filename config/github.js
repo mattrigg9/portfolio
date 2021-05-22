@@ -9,12 +9,14 @@ const GITHUB_REPOS = [
   "cdk-s3-distribution-template",
 ]
 
-const plugins = GITHUB_REPOS.map(repo => ({
-  resolve: "gatsby-source-github-repo",
-  options: {
-    repoUrl: `${GITHUB_USER_PATH}/${repo}`,
-  },
-}))
+const plugins = [] // TODO: Replace with new plugin
+
+// GITHUB_REPOS.map(repo => ({
+//   resolve: "gatsby-source-github-repo",
+//   options: {
+//     repoUrl: `${GITHUB_USER_PATH}/${repo}`,
+//   },
+// }))
 
 module.exports = {
   plugins,
