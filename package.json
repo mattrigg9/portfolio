@@ -42,7 +42,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby clean && gatsby build",
-    "deploy": "export AWS_PROFILE=portfolio && aws s3 sync ./public s3://mattrigg-portfolio --profile portfolio && aws cloudfront create-invalidation --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
+    "deploy": "npm run build && export AWS_PROFILE=portfolio && aws s3 sync ./public s3://mattrigg-portfolio --profile portfolio && aws cloudfront create-invalidation --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
