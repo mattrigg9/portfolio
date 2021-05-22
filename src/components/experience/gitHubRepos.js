@@ -1,6 +1,6 @@
 import React from "react"
 import classNames from "classnames"
-import layoutStyles from "../homeLayout.module.scss"
+import * as layoutStyles from "../homeLayout.module.scss"
 import { author as gitHubAuthor } from "config/github"
 
 const GITHUB_AUTHOR = 'mattrigg9';
@@ -64,7 +64,7 @@ const GitHubRepos = () => {
         {repos.map(repo => (
           <li
             key={repo.name}
-            className={classNames(layoutStyles.module, "py-2 my-5")}
+            className={classNames(layoutStyles.sectionModule, "py-2 my-5")}
           >
             <RepoInfo {...repo} />
           </li>

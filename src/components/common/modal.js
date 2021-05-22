@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Modal from "react-modal"
 import { VscChromeClose } from "react-icons/vsc"
-import styles from "./modal.module.scss"
+import * as styles from "./modal.module.scss"
 
 function BaseModal({ isOpen, onClose, contentLabel, title, children }) {
   return (

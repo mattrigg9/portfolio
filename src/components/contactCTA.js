@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import classNames from "classnames"
-import layoutStyles from "./homeLayout.module.scss"
-import styles from "./contactCTA.module.scss"
+import * as layoutStyles from "./homeLayout.module.scss"
+import * as styles from "./contactCTA.module.scss"
 
 function ContactCTA() {
   return (

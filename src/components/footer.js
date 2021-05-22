@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./footer.module.scss"
+import * as styles from "./footer.module.scss"
 import links from 'config/links';
 import { Link } from 'gatsby';
 

@@ -4,17 +4,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import classNames from "classnames"
 import Hero from "./hero"
 import Footer from "./footer"
-import styles from "./contactLayout.module.scss"
-import heroStyles from "./contactHero.module.scss"
+import * as styles from "./contactLayout.module.scss"
 
 const ContactLayout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query {
+    {
       heroBackground: file(relativePath: { eq: "hero-contact.jpg" }) {
         childImageSharp {
-          fluid(quality: 99, maxWidth: 1400) {
-            ...GatsbyImageSharpFluid_withWebp_noBase64
-          }
+          gatsbyImageData(quality: 99, placeholder: NONE, layout: FULL_WIDTH)
         }
       }
     }
@@ -23,11 +20,11 @@ const ContactLayout = ({ children }) => {
   return (
     <>
       <Hero
-        backgroundFluid={data.heroBackground.childImageSharp.fluid}
-        className={heroStyles.container}
-        titleClassName={heroStyles.title}
+        backgroundFluid={data.heroBackground.childImageSharp.gatsbyImageData}
       />
-      <noscript key="noscript" id="gatsby-noscript">This website works best with JavaScript enabled.</noscript>
+      <noscript key="noscript" id="gatsby-noscript">
+        This website works best with JavaScript enabled.
+      </noscript>
       <main className={classNames(styles.content)}>{children}</main>
       <Footer />
     </>

@@ -1,34 +1,29 @@
 import React from "react"
 import classNames from "classnames"
-import layoutStyles from "./homeLayout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import styles from './about.module.scss';
+import { GatsbyImage } from "gatsby-plugin-image";
+import * as layoutStyles from "./homeLayout.module.scss"
+import * as styles from './about.module.scss';
 
 const About = () => {
-  const queryResults = useStaticQuery(graphql`
-    query {
-      headshot: file(relativePath: { eq: "matt-rigg.jpg" }) {
+  const queryResults = useStaticQuery(graphql`{
+  headshot: file(relativePath: {eq: "matt-rigg.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(quality: 100, width: 460, height: 460, layout: CONSTRAINED)
+    }
+  }
+  markdownRemark(frontmatter: {type: {eq: "about-me"}}) {
+    html
+    frontmatter {
+      signatureImage {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 460, maxHeight: 460) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      markdownRemark(frontmatter: { type: { eq: "about-me" } }) {
-        html
-        frontmatter {
-          signatureImage {
-            childImageSharp {
-              fixed(width: 75) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
+          gatsbyImageData(width: 75, layout: FIXED)
         }
       }
     }
-  `)
+  }
+}
+`)
 
   return (
     <section className={classNames(layoutStyles.section)}>
@@ -42,24 +37,21 @@ const About = () => {
             }}
           />
           <div className="signature">
-            <Img
-            className="mt-3"
-              fixed={
-                queryResults.markdownRemark.frontmatter.signatureImage
-                  .childImageSharp.fixed
-              }
-            />
+            <GatsbyImage
+              alt="Matt Rigg Signature"
+              image={queryResults.markdownRemark.frontmatter.signatureImage.childImageSharp.gatsbyImageData}
+              className="mt-3" />
           </div>
         </div>
         <div className="col-12 col-md-5 mt-4 mt-md-0">
-          <Img
-            fluid={queryResults.headshot.childImageSharp.fluid}
-            className="rounded shadow"
-          />
+          <GatsbyImage
+            alt="Matt Rigg"
+            image={queryResults.headshot.childImageSharp.gatsbyImageData}
+            className="rounded shadow" />
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default About

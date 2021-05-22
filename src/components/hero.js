@@ -1,24 +1,20 @@
 import React from "react"
-import Header from "./header"
-import styles from "./hero.module.scss"
+import { GatsbyImage } from "gatsby-plugin-image"
 import BackgroundImage from "gatsby-background-image"
+import Header from "./header"
+import * as styles from "./hero.module.scss"
 
-const Hero = ({
-  title,
-  className,
-  titleClassName,
-  backgroundFluid,
-}) => {
+const Hero = ({ title, className, titleClassName, image }) => {
   return (
     <BackgroundImage
       Tag="section"
       className={className}
-      fluid={backgroundFluid}
       fadeIn
       critical
       alt={title}
     >
       <div className={styles.contentWrapper}>
+        <GatsbyImage image={image} alt={title} />
         <Header />
         <h1 className={titleClassName}>{title}</h1>
       </div>

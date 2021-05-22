@@ -1,9 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import moment from "moment"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import classNames from "classnames"
-import layoutStyles from "../homeLayout.module.scss"
+import * as layoutStyles from "../homeLayout.module.scss"
 
 const TimeRange = ({ startTime, endTime }) => {
   const formattedStartTime = startTime.format("MMM YYYY")
@@ -39,62 +39,53 @@ const JobPosition = ({
   }
   const duration = moment.duration(diff)
 
-  return (
-    <>
-      <div className="row">
-        <div className="col">{logo && <Img fixed={logo} alt={employer} />}</div>
+  return <>
+    <div className="row">
+      <div className="col">{logo && <GatsbyImage image={logo} alt={employer} />}</div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <h6 className=" m-0">{position}</h6>
+        <p className="text-size-small">{employer}</p>
       </div>
-      <div className="row">
-        <div className="col">
-          <h6 className=" m-0">{position}</h6>
-          <p className="text-size-small">{employer}</p>
-        </div>
-        <div className="col text-size-small">
-          <TimeRange startTime={startTime} endTime={endTime} /> (
-          <Duration duration={duration} />)
-        </div>
+      <div className="col text-size-small">
+        <TimeRange startTime={startTime} endTime={endTime} /> (
+        <Duration duration={duration} />)
       </div>
-      <div className="row">
-        <div className="col">
-          <p className="text-size-small">{description}</p>
-        </div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <p className="text-size-small">{description}</p>
       </div>
-    </>
-  )
+    </div>
+  </>;
 }
 
 const Employment = () => {
-  const logos = useStaticQuery(graphql`
-    {
-      amazon: file(relativePath: { eq: "logos/amazon.png" }) {
-        childImageSharp {
-          fixed(height: 40) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      compspecialties: file(relativePath: { eq: "logos/compspecialties.png" }) {
-        childImageSharp {
-          fixed(height: 40) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      uw: file(relativePath: { eq: "logos/udub.png" }) {
-        childImageSharp {
-          fixed(height: 22) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
+  const logos = useStaticQuery(graphql`{
+  amazon: file(relativePath: {eq: "logos/amazon.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 40, layout: FIXED)
     }
-  `)
+  }
+  compspecialties: file(relativePath: {eq: "logos/compspecialties.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 40, layout: FIXED)
+    }
+  }
+  uw: file(relativePath: {eq: "logos/udub.png"}) {
+    childImageSharp {
+      gatsbyImageData(height: 22, layout: FIXED)
+    }
+  }
+}
+`)
 
   const positions = [
     {
       employer: "Amazon",
       position: "Sr. Front End Engineer",
-      logo: logos.amazon.childImageSharp.fixed,
+      logo: logos.amazon.childImageSharp.gatsbyImageData,
       startTime: moment("2014-06-05"),
       endTime: undefined,
       description:
@@ -103,7 +94,7 @@ const Employment = () => {
     {
       employer: "Competition Specialties",
       position: "Tech Lead, eCommerce Lead Engineer",
-      logo: logos.compspecialties.childImageSharp.fixed,
+      logo: logos.compspecialties.childImageSharp.gatsbyImageData,
       startTime: moment("2011-05-01"),
       endTime: moment("2014-06-05"),
       description:
@@ -112,7 +103,7 @@ const Employment = () => {
     {
       employer: "University of Washington",
       position: "Bachelors of Science",
-      logo: logos.uw.childImageSharp.fixed,
+      logo: logos.uw.childImageSharp.gatsbyImageData,
       startTime: moment("2012-09-01"),
       endTime: moment("2014-06-01"),
       description: "Graduated with Summa Cum Laude honors.",
@@ -126,7 +117,7 @@ const Employment = () => {
         {positions.map((position, index) => (
           <li
             key={index}
-            className={classNames(layoutStyles.module, "py-2 my-5")}
+            className={classNames(layoutStyles.sectionModule, "py-2 my-5")}
           >
             <JobPosition {...position} />
           </li>

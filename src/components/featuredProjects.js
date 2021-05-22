@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import { useStaticQuery, graphql } from "gatsby"
 import ProjectGrid from "./projectGrid"
-import layoutStyles from "./homeLayout.module.scss"
+import * as layoutStyles from "./homeLayout.module.scss"
 
 const FeaturedProjects = () => {
   const queryResult = useStaticQuery(graphql`
@@ -21,16 +21,12 @@ const FeaturedProjects = () => {
               website
               featuredImage {
                 childImageSharp {
-                  fluid(maxWidth: 300) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(width: 300, layout: CONSTRAINED)
                 }
               }
               fullImage {
                 childImageSharp {
-                  fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(width: 600, layout: CONSTRAINED)
                 }
               }
             }
@@ -45,16 +41,14 @@ const FeaturedProjects = () => {
 
     return {
       description: node.html,
-      featuredImage: featuredImage.childImageSharp.fluid,
-      fullImage: fullImage.childImageSharp.fluid,
+      featuredImage: featuredImage.childImageSharp.gatsbyImageData,
+      fullImage: fullImage.childImageSharp.gatsbyImageData,
       ...frontmatterAttrs,
     }
   })
 
   return (
-    <section
-      className={classNames(layoutStyles.section, layoutStyles.overlapTop)}
-    >
+    <section className={classNames(layoutStyles.section)}>
       {/* <h3 className={classNames(layoutStyles.sectionTitle, 'c-slate-0')}>Featured Projects</h3> */}
       <ProjectGrid projects={projects} />
     </section>

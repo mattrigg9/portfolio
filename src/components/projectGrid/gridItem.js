@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
-import Img from "gatsby-image"
-import styles from "./gridItem.module.scss"
+import { GatsbyImage } from "gatsby-plugin-image"
+import * as styles from "./gridItem.module.scss"
 import Modal from "react-modal"
 import BaseModal from "../common/modal"
 
@@ -32,17 +32,17 @@ const GridItem = ({
           tabIndex="0"
         >
           {featuredImage && (
-            <Img
-              fluid={featuredImage}
+            <GatsbyImage
+              image={featuredImage}
               alt={alt || title}
               className={classNames(styles.gridItemImage, {
                 [styles.gridItemImage__shadow]: shadow,
               })}
             />
           )}
-          <div className={styles.gridItemDetails}>
+          <div>
             <h2 className={styles.gridItemTitle}>{title}</h2>
-            <div className={styles.gridItemDescription}>{shortDescription}</div>
+            <div>{shortDescription}</div>
           </div>
         </div>
       </li>
@@ -55,8 +55,8 @@ const GridItem = ({
         <div className="row">
           <div className="col-12 col-lg-7">
             <a href={website} target="_blank" rel="noreferrer">
-              <Img
-                fluid={fullImage}
+              <GatsbyImage
+                image={fullImage}
                 alt={alt || title}
                 className={classNames(styles.gridItemImage, {
                   [styles.gridItemImage__shadow]: shadow,

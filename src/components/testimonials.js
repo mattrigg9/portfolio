@@ -1,9 +1,9 @@
 import React from "react"
 import classNames from "classnames"
-import layoutStyles from "./homeLayout.module.scss"
 import { useStaticQuery, graphql } from "gatsby"
 import Carousel from "./common/carousel";
-import styles from "./testimonials.module.scss"
+import * as layoutStyles from "./homeLayout.module.scss"
+import * as styles from "./testimonials.module.scss"
 
 const Testimonials = () => {
   const queryResult = useStaticQuery(
