@@ -1,10 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Modal from "react-modal"
-import { FaTimes } from "react-icons/fa"
+import { VscChromeClose } from "react-icons/vsc"
 import styles from "./modal.module.scss"
 
-function BaseModal({ isOpen, onClose, contentLabel, children }) {
+function BaseModal({ isOpen, onClose, contentLabel, title, children }) {
   return (
     <Modal
       closeTimeoutMS={200}
@@ -12,11 +12,11 @@ function BaseModal({ isOpen, onClose, contentLabel, children }) {
       contentLabel={contentLabel}
       className={styles.modal}
       overlayClassName={styles.modalOverlay}
-      shouldCloseOnEsc
       shouldCloseOnOverlayClick
     >
       <header className={styles.modalHeader}>
-        <FaTimes
+        <h1 className="mb-5">{title}</h1>
+        <VscChromeClose
           onClick={onClose}
           onKeyPress={onClose}
           role="button"

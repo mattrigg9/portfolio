@@ -50,8 +50,8 @@ const GridItem = ({
         isOpen={modalIsOpen}
         onClose={closeModal}
         contentLabel={`${title} details`}
+        title={title}
       >
-        <h1 className="mb-5">{title}</h1>
         <div className="row">
           <div className="col-12 col-lg-7">
             <a href={website} target="_blank" rel="noreferrer">
