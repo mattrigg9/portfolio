@@ -9,7 +9,7 @@ const RepoInfo = ({ name, description }) => {
   const url = `https://github.com/${GITHUB_AUTHOR}/${name}`
   return (
     <>
-      <h5 className="no-link-style">
+      <h5>
         <a href={url} className="no-link-style hover-fade">
           <span className="font-weight-light">{gitHubAuthor}/</span>
           {name}

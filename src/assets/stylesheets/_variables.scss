@@ -1,15 +1,15 @@
-$dusk: #272736;
+$dusk: #242444;
 $morning-sky: #a8dafd;
-$muted-sky: #a9bedb;
-$morning-sun: #fdcf80;
+$muted-sky: #cedcf0;
+$morning-sun: #fde0b8;
 
-$primary: $morning-sky;
-$secondary: #878ee8;
+$primary: lighten(#242444, 15%);
+$secondary: #6E3B9D;
 $warning: $morning-sun;
 
-$link-color: $secondary;
-$body-color: $muted-sky;
-$body-background-color: $dusk;
+$body-color: $dusk;
+$link-color: #4325c7;
+$body-background-color: $muted-sky;
 
 // Font
 $font-size-root: 10px;
@@ -32,14 +32,14 @@ $btn-disabled-opacity: 0.65 !default;
 $btn-border-radius: 2.5rem;
 
 // Content
-$section-vertical-spacing: 5rem;
+$section-vertical-spacing: 8rem;
 
 // Border radius
 $border-radius: 1.5rem;
 $input-border-radius: 1rem;
 
 // Form
-$input-color: #fff;
+$input-color: $body-color;
 $input-focus-box-shadow: none;
 $input-padding-x: 1rem;
 $input-padding-y: 1rem;
@@ -52,3 +52,8 @@ $content-fade-duration: 1s;
 
 // Allows for single file imports in helper files
 @import "prerequisites";
+
+:export {
+  primary: $primary;
+  bodyBackgroundColor: $body-background-color;
+}

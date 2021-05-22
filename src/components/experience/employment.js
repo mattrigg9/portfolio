@@ -92,13 +92,13 @@ const Employment = () => {
 
   const positions = [
     {
-      employer: "Amazon.com",
-      position: "Tech Lead, Front End Engineer II",
+      employer: "Amazon",
+      position: "Sr. Front End Engineer",
       logo: logos.amazon.childImageSharp.fixed,
       startTime: moment("2014-06-05"),
       endTime: undefined,
       description:
-        "As a veteran engineer at Amazon, I have launched multiple high-profile products that have scaled to millions of users.",
+        "As a veteran engineer at Amazon, I have successfully launched several high-profile products that have scaled to millions of users.",
     },
     {
       employer: "Competition Specialties",
@@ -115,7 +115,7 @@ const Employment = () => {
       logo: logos.uw.childImageSharp.fixed,
       startTime: moment("2012-09-01"),
       endTime: moment("2014-06-01"),
-      description: "Graduated in 2014 with Summa Cum Laude honors.",
+      description: "Graduated with Summa Cum Laude honors.",
     },
   ]
 

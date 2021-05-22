@@ -1,3 +1,4 @@
+
 @import "../../assets/stylesheets/variables";
 
 $modal-viewport-padding: 5rem;
@@ -12,7 +13,7 @@ $modal-viewport-padding-mobile: 0;
   padding: 2rem;
   position: fixed;
   border: 0.1rem solid $gray-800;
-  background: $dusk;
+  background: $body-background-color;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   outline: none;

@@ -74,7 +74,7 @@ function ContactForm() {
             </p>
             <Link
               to="/"
-              className="btn btn-primary cta no-link-style text-dark mt-4"
+              className="btn btn-primary cta no-link-style text-light mt-4"
             >
               Go Back
             </Link>

@@ -1,19 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Carousel from "nuka-carousel"
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa"
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs"
 
 const BaseCarousel = ({ children }) => {
   return (
     <Carousel
       className="carousel"
+      wrapAround
       renderCenterLeftControls={({ previousSlide }) => (
         <button
           className="btn btn-link slide-control"
           onClick={previousSlide}
           aria-label="Previous"
         >
-          <FaAngleLeft />
+          <BsChevronLeft />
         </button>
       )}
       renderCenterRightControls={({ nextSlide }) => (
@@ -22,7 +23,7 @@ const BaseCarousel = ({ children }) => {
           onClick={nextSlide}
           aria-label="Next"
         >
-          <FaAngleRight />
+          <BsChevronRight />
         </button>
       )}
     >

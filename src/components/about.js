@@ -32,7 +32,7 @@ const About = () => {
 
   return (
     <section className={classNames(layoutStyles.section)}>
-      <h1 className={classNames(layoutStyles.sectionTitle)}>About Matt</h1>
+      <h1 className={classNames(layoutStyles.sectionTitle)}>Hi, I'm Matt</h1>
       <div className="row">
         <div className="col-12 col-md-7">
           <article

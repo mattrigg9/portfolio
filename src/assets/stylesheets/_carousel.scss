@@ -22,5 +22,8 @@
   .slide-control {
     color: $body-color;
     font-size: 2.5rem;
+    @include media-breakpoint-up(md) {
+      font-size: 4.5rem;
+    }
   }
 }
