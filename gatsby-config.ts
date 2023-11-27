@@ -6,7 +6,19 @@ const config: GatsbyConfig = {
     siteUrl: `https://mattrigg.dev`,
   },
   graphqlTypegen: true,
-  plugins: ["gatsby-plugin-postcss", "gatsby-transformer-remark"],
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+  ],
 };
 
 export default config;
