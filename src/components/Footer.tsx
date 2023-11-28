@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 
 const social = [
@@ -28,11 +29,28 @@ const social = [
 export default function Footer() {
   const year = new Date().getFullYear();
 
+  const queryResults = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+      logo: file(relativePath: { eq: "matt-rigg-mark.svg" }) {
+        publicURL
+      }
+    }
+  `);
+
   return (
     <footer>
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
         <h2 className="text-4xl font-bold tracking-tight text-gray-700 sm:text-5xl text-center">
-          Matt Rigg
+          <img
+            src={queryResults.logo.publicURL}
+            alt={queryResults.site.siteMetadata.title}
+            className="h-12 w-fit-content mx-auto invert-[.8] brightness-10"
+          />
         </h2>
 
         <div className="mt-10 flex justify-center space-x-10">
