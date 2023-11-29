@@ -12,6 +12,8 @@ export default function Hero() {
         src="../images/mountain-top.jpg"
         className="w-full h-full object-cover absolute inset-0 -z-30"
         loading="eager"
+        layout="fullWidth"
+        quality={90}
         alt="Building a better world."
       />
 

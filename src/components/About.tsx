@@ -3,24 +3,17 @@ import React from "react";
 
 export default function About() {
   return (
-    <section
-      className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
-      id="about"
-    >
+    <section className="relative isolate px-6 py-24 sm:py-32 lg:px-0" id="about">
       <BackgroundPattern />
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-        <header className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          <div className="lg:pr-4">
-            <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-primary">Build better</p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Hi, I'm Matt.
-              </h1>
-              <p className="mt-6 text-xl leading-8 text-gray-700">
-                I build applications that people love to use.
-              </p>
-            </div>
-          </div>
+        <header className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto w-full max-w-7xl lg:gap-x-8 lg:px-8">
+          <p className="text-base font-semibold leading-7 text-primary">Build better</p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Hi, I'm Matt.
+          </h1>
+          <p className="mt-4 text-xl leading-8 text-gray-700">
+            I build applications that people love to use.
+          </p>
         </header>
         <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <StaticImage
@@ -30,32 +23,30 @@ export default function About() {
             className="w-[48rem] max-w-none max-h-[70rem] rounded-xl shadow-xl sm:w-[57rem] ring-1 ring-gray-400/10"
           />
         </div>
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          <div className="lg:pr-4">
-            <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-              <p>
-                Thoughtful and delicate interactions are the cornerstones that shape the user's
-                impression of a product's value. They can be incredibly subtle.
-              </p>
-              <p className="mt-8">
-                A well-made application predicts a users need before they even think about the next
-                step, offering a seamless experience that feels organic. A well designed application
-                should be like an airport. No matter where the user is, they always have the right
-                level of context to orient themselves and know where to go next. Providing a user
-                with this sense of control enables them to expertly navigate with little to no
-                effort, no matter how large or complex.
-              </p>
-              <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-                Building climate solutions
-              </h2>
-              <p className="mt-6">
-                Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis
-                arcu ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat
-                vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris.
-                Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis
-                ipsum eu a sed convallis diam.
-              </p>
-            </div>
+        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">
+          <div className="max-w-xl leading-7 lg:max-w-lg">
+            <p>
+              Thoughtful and delicate interactions are the cornerstones that shape the user's
+              impression of a product's value. They can be incredibly subtle.
+            </p>
+            <p className="mt-8">
+              A well-made application predicts a users need before they even think about the next
+              step, offering a seamless experience that feels organic. A well designed application
+              should be like an airport. No matter where the user is, they always have the right
+              level of context to orient themselves and know where to go next. Providing a user with
+              this sense of control enables them to expertly navigate with little to no effort, no
+              matter how large or complex.
+            </p>
+            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+              Building climate solutions
+            </h2>
+            <p className="mt-6">
+              Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu
+              ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate
+              nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim
+              cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed
+              convallis diam.
+            </p>
           </div>
         </div>
       </div>
@@ -72,7 +63,7 @@ function BackgroundPattern() {
       >
         <defs>
           <pattern
-            id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+            id="square"
             width={200}
             height={200}
             x="50%"
@@ -88,12 +79,7 @@ function BackgroundPattern() {
             strokeWidth={0}
           />
         </svg>
-        <rect
-          width="100%"
-          height="100%"
-          strokeWidth={0}
-          fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-        />
+        <rect width="100%" height="100%" strokeWidth={0} fill="url(#square)" />
       </svg>
     </div>
   );

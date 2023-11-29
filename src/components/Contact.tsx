@@ -3,10 +3,10 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen" id="contact">
       <StaticImage
-        src="../images/contact-bg.jpg"
-        alt="Landscape with boats"
+        src="../images/iceberg.jpg"
+        alt="Landscape with iceberg"
         className=" absolute -z-1 object-cover object-top-right h-full"
       />
       <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
@@ -19,7 +19,7 @@ export default function Contact() {
         <form
           action="#"
           method="POST"
-          className="mx-auto mt-16 max-w-xl p-8 rounded-xl backdrop-blur-md backdrop-brightness-[1.2] bg-white/30"
+          className="mx-auto mt-16 max-w-xl p-8 rounded-xl backdrop-blur-md backdrop-brightness-[1.05] bg-white/30"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
@@ -73,7 +73,7 @@ export default function Contact() {
           <div className="mt-10">
             <button
               type="submit"
-              className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="block w-full rounded-md bg-indigo-500 transition-colors px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Let's talk
             </button>
