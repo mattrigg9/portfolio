@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "npm run build && aws s3 sync ./public s3://mattrigg-portfolio --profile personal && aws cloudfront create-invalidation --profile personal --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
