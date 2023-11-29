@@ -32,26 +32,39 @@ export default function About() {
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">
           <div className="max-w-xl leading-7 lg:max-w-lg">
             <p>
-              Thoughtful and delicate interactions are the cornerstones that shape the user's
-              impression of a product's value. They can be incredibly subtle.
+              Thoughtful and delicate interactions are the cornerstones of how people see a
+              product's value. These often subtle interfaces can quietly but undoubtedly sway a
+              user's impression of a product. Understanding this psychology is critical to building
+              a product that people want to come back to time and time again.
             </p>
             <p className="mt-8">
-              A well-made application predicts a users need before they even think about the next
-              step, offering a seamless experience that feels organic. A well designed application
-              should be like an airport. No matter where the user is, they always have the right
-              level of context to orient themselves and know where to go next. Providing a user with
-              this sense of control enables them to expertly navigate with little to no effort, no
-              matter how large or complex.
+              A well made application is like an airport. No matter where the user is, they always
+              have just the right level of context to orient themselves and know where to go next.
+              Providing a user with this sense of control enables them to expertly navigate with
+              little to no effort, no matter how large or complex.
             </p>
-            <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+            <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">What I build</h2>
+            <p className="mt-6">
+              I build enterprise-scale web and React Native applications using the latest adopted
+              standards. I'm grateful to have worked with some of the most talented designers and
+              engineers out there. My applications have served millions of users over the past
+              decade.
+            </p>
+            <p className="mt-6">
+              As a 7+ year AWS veteran, I have intimate experience with building high-availability
+              and scalable applications in a way that's performant and cost-effective for your use
+              case.
+            </p>
+
+            <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">
               Building climate solutions
             </h2>
             <p className="mt-6">
-              Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu
-              ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate
-              nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim
-              cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed
-              convallis diam.
+              Since my work at TIME CO2, I've become deeply passionate about building solutions for
+              our climate crisis. I am actively pursuing opportunities and projects to materially
+              improve our planet. Solutions are beginning to scale, but we must continue to rage
+              against humanity's slow progress on climate action. CO2 removal, emissions reduction,
+              and energy grid modernization are all areas of interest.
             </p>
           </div>
         </div>

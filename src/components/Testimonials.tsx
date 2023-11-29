@@ -14,7 +14,7 @@ export default function Testimonials() {
       }
       placeholder: file(relativePath: { eq: "headshots/placeholder-male.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 75, height: 75, quality: 90, aspectRatio: 1)
+          gatsbyImageData(width: 80, height: 75, quality: 90, layout: CONSTRAINED)
         }
       }
       ian: file(relativePath: { eq: "headshots/ian-webb.jpg" }) {
@@ -159,8 +159,6 @@ export default function Testimonials() {
                             className="h-10 w-10 rounded-full bg-gray-50"
                             image={testimonial.author.image}
                             alt={testimonial.author.name}
-                            objectFit="cover"
-                            imgClassName="object-left-center"
                           />
                         )}
                         <div>
