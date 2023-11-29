@@ -75,7 +75,7 @@ export default function Projects() {
   );
 
   return (
-    <section className="py-24 md:py-32 lg:py-40 relative" id="projects">
+    <section className="my-24 md:my-32 relative" id="projects">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <header className="mx-auto max-w-2xl lg:mx-0 xl:sticky xl:top-8 xl:self-start">
           <p className="text-base font-semibold leading-7 text-primary">Build big</p>
@@ -95,7 +95,7 @@ export default function Projects() {
               <GatsbyImage
                 image={project.image}
                 alt="Alexa Blueprints"
-                className="aspect-[3/2] w-full rounded-xl object-cover"
+                className="aspect-[3/2] w-full rounded-xl object-cover ring-1 ring-gray-400/10 shadow-md"
               />
               <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{project.name}</h3>
               <p className="text-base leading-7 text-gray-600">{project.role}</p>
