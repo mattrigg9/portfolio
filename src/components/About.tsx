@@ -3,9 +3,9 @@ import React from "react";
 
 export default function About() {
   return (
-    <section className="relative isolate px-6 py-24 sm:py-32 lg:px-0" id="about">
+    <section className="relative px-6 py-24 sm:py-32 lg:px-0" id="about">
       <BackgroundPattern />
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
         <header className="w-full max-w-7xl lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:gap-x-8 lg:px-8">
           <p className="text-base font-semibold leading-7 text-primary">Build better</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -15,12 +15,18 @@ export default function About() {
             I build applications that people love to use.
           </p>
         </header>
-        <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+        <div className="lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:-mt-12 lg:overflow-hidden lg:p-12">
           <StaticImage
             src="../images/matt-rigg.jpg"
             alt="Matt Rigg"
-            objectPosition="bottom left"
-            className="max-h-[70rem] w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+            objectPosition="center left"
+            className="hidden max-h-[65rem] w-[55rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:block"
+          />
+          <StaticImage
+            src="../images/matt-rigg-cropped.jpg"
+            alt="Matt Rigg"
+            objectPosition="center left"
+            className="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:hidden"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">

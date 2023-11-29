@@ -43,7 +43,7 @@ export default function Footer() {
   `);
 
   return (
-    <footer>
+    <footer className="bg-gray-50">
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
         <h2 className="text-center text-4xl font-bold tracking-tight text-gray-700 sm:text-5xl">
           <img
@@ -58,7 +58,7 @@ export default function Footer() {
             <a
               key={item.name}
               href={item.href}
-              className="text-gray-400 hover:text-gray-500"
+              className="text-gray-500 hover:text-gray-600"
               target="_blank"
             >
               <span className="sr-only">{item.name}</span>

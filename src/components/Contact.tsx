@@ -3,13 +3,13 @@ import React from "react";
 
 export default function Contact() {
   return (
-    <section className="min-h-screen" id="contact">
+    <section className="relative h-screen max-h-[55rem]" id="contact">
       <StaticImage
         src="../images/iceberg.jpg"
         alt="Landscape with iceberg"
-        className=" -z-1 object-top-right absolute h-full object-cover"
+        className="object-top-right absolute -z-10 h-full object-cover"
       />
-      <div className="isolate px-6 py-24 sm:py-32 lg:px-8">
+      <div className="px-6 py-24 sm:py-32 lg:px-8">
         <header className="mx-auto max-w-2xl text-center">
           <p className="text-base font-semibold leading-7 text-primary">Want to work together?</p>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -19,7 +19,7 @@ export default function Contact() {
         <form
           action="#"
           method="POST"
-          className="mx-auto mt-16 max-w-xl rounded-xl bg-white/30 p-8 backdrop-blur-md backdrop-brightness-[1.05]"
+          className="mx-auto mt-16 max-w-xl rounded-xl bg-white/30 p-4 backdrop-blur-md backdrop-brightness-[1.05] sm:p-8"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>

@@ -75,7 +75,7 @@ export default function Projects() {
   );
 
   return (
-    <section className="relative my-24 md:my-32" id="projects">
+    <section className="relative my-8 py-8 md:my-32" id="projects">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <header className="mx-auto max-w-2xl lg:mx-0 xl:sticky xl:top-8 xl:self-start">
           <p className="text-base font-semibold leading-7 text-primary">Build big</p>
