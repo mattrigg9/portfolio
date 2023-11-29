@@ -31,11 +31,6 @@ export default function Footer() {
 
   const queryResults = useStaticQuery(graphql`
     query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
       logo: file(relativePath: { eq: "matt-rigg-mark.svg" }) {
         publicURL
       }
@@ -48,7 +43,7 @@ export default function Footer() {
         <h2 className="text-center text-4xl font-bold tracking-tight text-gray-700 sm:text-5xl">
           <img
             src={queryResults.logo.publicURL}
-            alt={queryResults.site.siteMetadata.title}
+            alt="Matt Rigg"
             className="w-fit-content brightness-10 mx-auto h-12 invert-[.8]"
           />
         </h2>
