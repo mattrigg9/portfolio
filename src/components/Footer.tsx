@@ -45,11 +45,11 @@ export default function Footer() {
   return (
     <footer>
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
-        <h2 className="text-4xl font-bold tracking-tight text-gray-700 sm:text-5xl text-center">
+        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-700 sm:text-5xl">
           <img
             src={queryResults.logo.publicURL}
             alt={queryResults.site.siteMetadata.title}
-            className="h-12 w-fit-content mx-auto invert-[.8] brightness-10"
+            className="w-fit-content brightness-10 mx-auto h-12 invert-[.8]"
           />
         </h2>
 

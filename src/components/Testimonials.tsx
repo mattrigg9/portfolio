@@ -92,14 +92,14 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="min-h-screen relative" id="testimonials">
+    <section className="relative min-h-screen" id="testimonials">
       <StaticImage
         src="../images/belay.jpg"
         alt="Mountaineer on belay"
         className="absolute -z-10 h-full"
         imgClassName="lg:object-right-top"
       />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 isolate pb-32 pt-24 sm:pt-32">
+      <div className="isolate mx-auto max-w-7xl px-6 pb-32 pt-24 sm:pt-32 lg:px-8">
         <header className="mx-auto max-w-xl text-center">
           <p className="text-base font-semibold leading-7 text-white">Build confidently</p>
           <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
@@ -110,7 +110,7 @@ export default function Testimonials() {
           <figure className="col-span-2 hidden sm:block sm:rounded-xl sm:bg-white sm:shadow-lg sm:ring-1 sm:ring-gray-900/5 xl:col-start-2 xl:row-end-1">
             <blockquote className="p-12 text-xl font-semibold leading-8 tracking-tight text-gray-900">
               <p className="relative">
-                <span className="text-4xl absolute -left-5 -top-1">“</span>
+                <span className="absolute -left-5 -top-1 text-4xl">“</span>
                 {`${featuredTestimonial.body}”`}
               </p>
             </blockquote>
@@ -143,7 +143,7 @@ export default function Testimonials() {
                       (columnGroupIdx === testimonials.length - 1 &&
                         columnIdx === columnGroup.length - 1)
                       ? "xl:row-span-2"
-                      : "col-span-2 xl:col-start-2 row-start-1 xl:row-end-2",
+                      : "col-span-2 row-start-1 xl:col-start-2 xl:row-end-2",
                     "space-y-8",
                   )}
                 >
@@ -167,7 +167,7 @@ export default function Testimonials() {
                         )}
                         <div>
                           <div className="font-semibold leading-7">{testimonial.author.name}</div>
-                          <div className="text-gray-600 leading-4">{testimonial.author.title}</div>
+                          <div className="leading-4 text-gray-600">{testimonial.author.title}</div>
                         </div>
                       </figcaption>
                     </figure>

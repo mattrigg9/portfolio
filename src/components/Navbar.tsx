@@ -23,7 +23,7 @@ export default function Navbar() {
         <img
           src={queryResults.logo.publicURL}
           alt={queryResults.site.siteMetadata.title}
-          className="h-7 w-fit-content"
+          className="w-fit-content h-7"
         />
       </Link>
 

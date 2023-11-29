@@ -6,7 +6,7 @@ export default function About() {
     <section className="relative isolate px-6 py-24 sm:py-32 lg:px-0" id="about">
       <BackgroundPattern />
       <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-        <header className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto w-full max-w-7xl lg:gap-x-8 lg:px-8">
+        <header className="w-full max-w-7xl lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:gap-x-8 lg:px-8">
           <p className="text-base font-semibold leading-7 text-primary">Build better</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Hi, I'm Matt.
@@ -20,7 +20,7 @@ export default function About() {
             src="../images/matt-rigg.jpg"
             alt="Matt Rigg"
             objectPosition="bottom left"
-            className="w-[48rem] max-w-none max-h-[70rem] rounded-xl shadow-xl sm:w-[57rem] ring-1 ring-gray-400/10"
+            className="max-h-[70rem] w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">
