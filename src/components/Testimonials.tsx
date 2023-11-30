@@ -94,7 +94,8 @@ export default function Testimonials() {
       <StaticImage
         src="../images/belay.jpg"
         alt="Mountaineer on belay"
-        className="absolute -z-10 h-full"
+        // Absolute must be important to override gatsby-image-wrapper https://github.com/gatsbyjs/gatsby/issues/34457
+        className="!absolute -z-10 h-full"
         imgClassName="lg:object-right-top"
       />
       <div className="mx-auto max-w-7xl px-6 pb-32 pt-24 lg:px-8">

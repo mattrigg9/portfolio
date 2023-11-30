@@ -9,7 +9,8 @@ export default function Hero() {
       <Navbar />
       <StaticImage
         src="../images/mountain-top.jpg"
-        className="absolute inset-0 -z-30 h-full w-full object-cover"
+        // Absolute must be important to override gatsby-image-wrapper https://github.com/gatsbyjs/gatsby/issues/34457
+        className="!absolute inset-0 -z-30 h-full w-full object-cover"
         loading="eager"
         layout="fullWidth"
         quality={90}

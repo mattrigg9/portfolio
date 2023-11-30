@@ -20,13 +20,13 @@ export default function About() {
             src="../images/matt-rigg.jpg"
             alt="Matt Rigg"
             objectPosition="center left"
-            className="hidden max-h-[65rem] w-[55rem] rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:block"
+            className="!sm:block !hidden max-h-[65rem] w-[55rem] rounded-xl shadow-xl ring-1 ring-gray-400/10"
           />
           <StaticImage
             src="../images/matt-rigg-cropped.jpg"
             alt="Matt Rigg"
             objectPosition="center left"
-            className="w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:hidden"
+            className="!sm:hidden w-full rounded-xl shadow-xl ring-1 ring-gray-400/10"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">

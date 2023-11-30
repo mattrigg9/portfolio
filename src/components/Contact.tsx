@@ -74,7 +74,8 @@ export default function Contact() {
       <StaticImage
         src="../images/iceberg.jpg"
         alt="Landscape with iceberg"
-        className="object-top-right absolute -z-10 h-full object-cover"
+        // Absolute must be important to override gatsby-image-wrapper https://github.com/gatsbyjs/gatsby/issues/34457
+        className="object-top-right !absolute -z-10 h-full object-cover"
       />
       <div className="px-6 py-24 sm:py-32 lg:px-8">
         <header className="mx-auto max-w-2xl text-center">
