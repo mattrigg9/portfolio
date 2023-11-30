@@ -18,6 +18,7 @@ export default function SEO({ title, description, pathname, children }: SEOProps
 
   return (
     <>
+      <html lang="en" />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       {/* TODO: Build OG Image */}

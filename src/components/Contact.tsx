@@ -98,7 +98,6 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  aria-required
                   className="block text-sm font-semibold leading-6 text-gray-900"
                 >
                   Name
@@ -117,7 +116,6 @@ export default function Contact() {
               </div>
               <div>
                 <label
-                  aria-required
                   className="block text-sm font-semibold leading-6 text-gray-900"
                   htmlFor="email"
                 >
@@ -136,7 +134,6 @@ export default function Contact() {
               </div>
               <div className="sm:col-span-2">
                 <label
-                  aria-required
                   className="block text-sm font-semibold leading-6 text-gray-900"
                   htmlFor="message"
                 >
