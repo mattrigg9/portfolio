@@ -37,34 +37,33 @@ export default function About() {
               user's impression of a product. Understanding this psychology is critical to building
               a product that people want to come back to time and time again.
             </p>
-            <p className="mt-8">
+            <p className="mt-6">
               A well made application is like an airport. No matter where the user is, they always
               have just the right level of context to orient themselves and know where to go next.
               Providing a user with this sense of control enables them to expertly navigate with
               little to no effort, no matter how large or complex.
             </p>
             <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">What I build</h2>
-            <p className="mt-6">
-              I build enterprise-scale web and React Native applications using the latest adopted
+            <p className="mt-4">
+              I build enterprise-scale Web and React Native applications using the latest adopted
               standards. I'm grateful to have worked with some of the most talented designers and
-              engineers out there. My applications have served millions of users over the past
-              decade.
+              engineers in the market, building applications which have served millions of users.
             </p>
-            <p className="mt-6">
+            <p className="mt-4">
               As a 7+ year AWS veteran, I have intimate experience with building high-availability
-              and scalable applications in a way that's performant and cost-effective for your use
+              and scalable applications in a way that's performant and cost-effective for any use
               case.
             </p>
 
             <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">
               Building climate solutions
             </h2>
-            <p className="mt-6">
-              Since my work at TIME CO2, I've become deeply passionate about building solutions for
-              our climate crisis. I am actively pursuing opportunities and projects to materially
-              improve our planet. Solutions are beginning to scale, but we must continue to rage
-              against humanity's slow progress on climate action. CO2 removal, emissions reduction,
-              and energy grid modernization are all areas of interest.
+            <p className="mt-4">
+              I am deeply passionate about using my skills to build solutions for the most important
+              crisis of our time. I am actively pursuing opportunities and projects that materially
+              improve our planet. It's promising to see solutions beginning to scale, but we must
+              continue to rage against humanity's slow progress on climate action. CO2 removal,
+              emissions reduction, and energy grid modernization are all areas of interest.
             </p>
           </div>
         </div>

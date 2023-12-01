@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Build a Better World - Matt Rigg",
+    title: "Building a Better World - Matt Rigg",
     description:
       "Matt Rigg is a software engineer and entrepreneur based in Seattle who is using his skills to combat the climate crisis.",
     siteUrl: `https://mattrigg.dev`,
