@@ -30,6 +30,12 @@ const config: GatsbyConfig = {
         icon: "src/images/favicon.png",
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-JHW7QZX4TF"],
+      },
+    },
   ],
 };
 
