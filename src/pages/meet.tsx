@@ -26,21 +26,33 @@ export default function MeetPage() {
       />
       <Navbar withGradient />
       <section className="relative mx-4 my-8 min-h-[80vh] md:my-28">
-        <div className="relative mx-auto max-w-4xl overflow-hidden rounded-xl bg-white shadow-xl ring-1 ring-gray-700/10">
-          <div className="mx-auto flex w-full flex-col gap-8 p-8 md:flex-row lg:p-12">
+        <div className="relative mx-auto flex h-[55rem] max-w-4xl flex-col gap-8 overflow-hidden rounded-xl bg-white p-8 shadow-xl ring-1 ring-gray-700/10 md:h-[36rem] md:flex-row md:px-16 md:py-8">
+          <div className="flex flex-col justify-between md:h-full">
             <header className="mx-auto min-w-[20rem] max-w-2xl lg:mx-0 xl:sticky xl:top-8 xl:self-start">
               <h1 className="text-center text-4xl font-bold tracking-tight text-gray-900 md:text-left">
                 Let's meet
               </h1>
               <p className="mt-4 text-center text-lg leading-8 text-gray-600 md:text-left">
-                Have a project idea? Let's talk.
+                Have a project idea? Let's chat about it!
               </p>
             </header>
-            <div
-              className="calendly-inline-widget z-10 -mt-4 h-[38rem] w-full min-w-[21rem] justify-self-end"
-              data-url="https://calendly.com/matt-rigg/meet?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=404079"
-            />
+            <div className="mt-4 justify-self-end md:mb-8">
+              <p className="text-center text-lg leading-8 text-gray-600 md:text-left">
+                Prefer to reach out directly?
+              </p>
+
+              <a
+                href="/#contact"
+                className="block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Send me an email
+              </a>
+            </div>
           </div>
+          <div
+            className="calendly-inline-widget z-10 h-full w-full min-w-[21rem] justify-self-end md:-mt-4"
+            data-url="https://calendly.com/matt-rigg/meet?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=404079"
+          />
         </div>
       </section>
       <Footer />
