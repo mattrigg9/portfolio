@@ -8,6 +8,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://mattrigg.dev`,
   },
   graphqlTypegen: true,
+  trailingSlash: "always",
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
@@ -34,6 +35,19 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: ["G-JHW7QZX4TF"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        acl: null,
+        bucketName: "mattrigg-portfolio",
+        generateRedirectObjectsForPermanentRedirects: true,
+        generateRoutingRules: false,
+        hostname: "mattrigg.dev",
+        protocol: "https",
+        region: "us-west-2",
+        removeNonexistentObjects: true,
       },
     },
   ],
