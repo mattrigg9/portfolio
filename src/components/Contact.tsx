@@ -70,7 +70,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative h-screen max-h-[55rem]" id="contact">
+    <section className="relative h-full max-h-[55rem] min-h-screen" id="contact">
       <StaticImage
         src="../images/iceberg.jpg"
         alt="Landscape with iceberg"
