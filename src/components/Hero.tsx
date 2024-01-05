@@ -2,6 +2,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Navbar from "./Navbar";
 import { smoothScrollToAnchor } from "../utils/smoothScrollTo";
+import { LinkButton } from "./Button";
 
 export default function Hero() {
   return (
@@ -26,13 +27,9 @@ export default function Hero() {
             I use my skills as a software engineer to build solutions for our climate crisis.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#projects"
-              onClick={smoothScrollToAnchor}
-              className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
+            <LinkButton href="#projects" onClick={smoothScrollToAnchor}>
               View my work
-            </a>
+            </LinkButton>
             <a
               href="#contact"
               className="text-sm font-semibold leading-6 text-gray-50"

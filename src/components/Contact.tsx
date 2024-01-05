@@ -152,11 +152,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="mt-10 flex flex-col items-center gap-4">
-              <Button
-                type="submit"
-                isLoading={isLoading}
-                className="block w-full rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
+              <Button type="submit" isLoading={isLoading}>
                 Send Message
               </Button>
 

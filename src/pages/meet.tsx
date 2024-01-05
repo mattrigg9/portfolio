@@ -3,6 +3,7 @@ import SEO from "../components/SEO";
 import Navbar from "../components/Navbar";
 import { StaticImage } from "gatsby-plugin-image";
 import Footer from "../components/Footer";
+import { LinkButton } from "../components/Button";
 
 export const Head = () => (
   <SEO title="Schedule a Meeting">
@@ -41,12 +42,9 @@ export default function MeetPage() {
                 Prefer to reach out directly?
               </p>
 
-              <a
-                href="/#contact"
-                className="mt-2 block rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm transition-colors hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Send me an email
-              </a>
+              <div className="mx-auto mt-4 text-center md:text-left">
+                <LinkButton href="/#contact">Send me an email</LinkButton>
+              </div>
             </div>
           </div>
           <div
