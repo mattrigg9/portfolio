@@ -1,6 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React, { FormEvent, useState } from "react";
 import Button from "./Button";
+import Field from "./Field";
 
 interface SubmitContactFormRequest {
   name?: string;
@@ -95,60 +96,34 @@ export default function Contact() {
             onSubmit={handleSubmit}
           >
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-semibold leading-6 text-gray-900"
-                >
-                  Name
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    autoComplete="name"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                    id="name"
-                    name="name"
-                    onChange={(event) => setName(event.target.value)}
-                    required
-                    type="text"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  className="block text-sm font-semibold leading-6 text-gray-900"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                    id="email"
-                    name="email"
-                    onChange={(event) => setEmail(event.target.value)}
-                    required
-                    type="email"
-                  />
-                </div>
-              </div>
+              <Field
+                as="input"
+                autoComplete="name"
+                label="Name"
+                name="name"
+                onTextChange={setName}
+                required
+              />
+
+              <Field
+                as="input"
+                autoComplete="email"
+                label="Email"
+                name="email"
+                onTextChange={setEmail}
+                required
+                type="email"
+              />
+
               <div className="sm:col-span-2">
-                <label
-                  className="block text-sm font-semibold leading-6 text-gray-900"
-                  htmlFor="message"
-                >
-                  Message
-                </label>
-                <div className="mt-2.5">
-                  <textarea
-                    id="message"
-                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 transition-shadow placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6"
-                    name="message"
-                    onChange={(event) => setMessage(event.target.value)}
-                    required
-                    rows={4}
-                  />
-                </div>
+                <Field
+                  as="textarea"
+                  label="Message"
+                  name="message"
+                  onTextChange={setMessage}
+                  required
+                  rows={4}
+                />
               </div>
             </div>
             <div className="mt-10 flex flex-col items-center gap-4">
