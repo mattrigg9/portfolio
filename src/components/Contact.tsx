@@ -1,5 +1,7 @@
-import { StaticImage } from "gatsby-plugin-image";
-import React, { FormEvent, useState } from "react";
+"use client";
+
+import Image from "next/image";
+import { FormEvent, useState } from "react";
 import Button from "./Button";
 import Field from "./Field";
 
@@ -72,11 +74,11 @@ export default function Contact() {
 
   return (
     <section className="relative h-full max-h-[55rem] min-h-screen" id="contact">
-      <StaticImage
-        src="../images/iceberg.jpg"
+      <Image
+        src="/images/iceberg.jpg"
         alt="Landscape with iceberg"
-        // Absolute must be important to override gatsby-image-wrapper https://github.com/gatsbyjs/gatsby/issues/34457
-        className="object-top-right !absolute -z-10 h-full object-cover"
+        fill
+        className="object-cover object-top-right -z-10"
       />
       <div className="px-6 py-24 sm:py-32 lg:px-8">
         <header className="mx-auto max-w-2xl text-center">
@@ -133,7 +135,7 @@ export default function Contact() {
 
               <p>or</p>
 
-              <a href="/meet/" target="_blank" className="font-semibold leading-6 text-gray-900">
+              <a href="/meet/" target="_blank" className="font-semibold leading-6 text-gray-800 hover:text-indigo-950 transition-colors">
                 Schedule a meeting <span aria-hidden="true">&rarr;</span>
               </a>
             </div>

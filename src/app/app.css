@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Font Family */
+  --font-family-sans: "Open Sans", Helvetica, Arial, sans-serif;
+
+  /* Custom Colors */
+  --color-primary: #404079;
+  --color-secondary: #6e3b9d;
+  --color-warning: #fde0b8;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-family-sans);
+  }
+  
+  a {
+    text-decoration-color: #4325c7;
+  }
+
+  input, textarea, select {
+    @apply bg-gray-50/70
+  }  
+}
+

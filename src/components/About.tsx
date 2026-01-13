@@ -1,69 +1,72 @@
-import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
+import ExportedImage from "next-image-export-optimizer";
+import mattRiggImg from "../images/matt-rigg.jpg";
+import SectionHeader from "./SectionHeader";
 
 export default function About() {
   return (
-    <section className="relative px-6 py-24 sm:py-32 lg:px-0" id="about">
-      <BackgroundPattern />
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
-        <header className="w-full max-w-7xl lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:gap-x-8 lg:px-8">
-          <p className="text-base font-semibold leading-7 text-primary">Build better</p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Hi, I'm Matt.
-          </h1>
-          <p className="mt-4 text-xl leading-8 text-gray-700">
-            I build applications that people love to use.
-          </p>
-        </header>
-        <div className="lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:-mt-12 lg:overflow-hidden lg:p-12">
-          <StaticImage
-            src="../images/matt-rigg.jpg"
-            alt="Matt Rigg"
-            objectPosition="center left"
-            className="!sm:block !hidden max-h-[65rem] w-[55rem] rounded-xl shadow-xl ring-1 ring-gray-400/10"
-          />
-          <StaticImage
-            src="../images/matt-rigg-cropped.jpg"
-            alt="Matt Rigg"
-            objectPosition="center left"
-            className="!sm:hidden w-full rounded-xl shadow-xl ring-1 ring-gray-400/10"
+    <section
+      className="relative px-2 py-24 sm:py-32 lg:px-6"
+      id="about"
+      aria-labelledby="about-heading"
+    >
+      <Background />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-8 px-4 lg:grid-cols-2 lg:items-start lg:px-6">
+        <SectionHeader
+          heading="Hi, I'm Matt."
+          description="I build applications that people love to use."
+          headingLevel="h2"
+          className="w-full max-w-7xl lg:col-start-1 lg:row-start-1 lg:mx-auto lg:px-8"
+        />
+        <div className="relative mx-auto aspect-3/4 max-h-[60rem] w-full max-w-[45rem] lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mx-0 lg:-mt-12 lg:p-12">
+          <ExportedImage
+            src={mattRiggImg}
+            fill
+            alt="Portrait of Matt Rigg"
+            className="rounded-xl object-cover object-center shadow-xl ring-1 ring-gray-400/10 transition-transform duration-500 hover:scale-[1.008]"
+            draggable={false}
+            role="presentation"
           />
         </div>
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">
-          <div className="max-w-xl leading-7 lg:max-w-lg">
+        <div className="lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:px-8">
+          <div className="max-w-xl space-y-4 leading-7 lg:max-w-lg">
             <p>
-              Thoughtful and delicate interactions are the cornerstones of how people see a
-              product's value. These often subtle interfaces can quietly but undoubtedly sway a
-              user's impression of a product. Understanding this psychology is critical to building
-              a product that people want to come back to time and time again.
+              Climate work is a tapestry of disciplines, a community working together to solve an
+              existential problem.
             </p>
-            <p className="mt-6">
-              A well made application is like an airport. No matter where the user is, they always
-              have just the right level of context to orient themselves and know where to go next.
-              Providing a user with this sense of control enables them to expertly navigate with
-              little to no effort, no matter how large or complex.
-            </p>
-            <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">What I build</h2>
-            <p className="mt-4">
-              I build enterprise-scale Web and React Native applications using the latest adopted
-              standards. I'm grateful to have worked with some of the most talented designers and
-              engineers in the market, building applications which have served millions of users.
-            </p>
-            <p className="mt-4">
-              As a 7+ year AWS veteran, I have intimate experience with building high-availability
-              and scalable applications in a way that's performant and cost-effective for any use
-              case.
+            <p>
+              I am only one small thread in this tapestry, but I work with fervor and relentless
+              curiosity.
             </p>
 
-            <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">
-              Building climate solutions
-            </h2>
-            <p className="mt-4">
-              I am deeply passionate about using my skills to build solutions for the most important
-              crisis of our time. I am actively pursuing opportunities and projects that materially
-              improve our planet. It's promising to see solutions beginning to scale, but we must
-              continue to rage against humanity's slow progress on climate action. CO2 removal,
-              emissions reduction, and energy grid modernization are all areas of interest.
+            <p>
+              While leading the engineering team at The Building Decarbonization Coalition, I'm
+              simultaneously investigating reformative solutions for our energy grid.
+            </p>
+
+            <p>
+              We're barreling towards an energy crisis that will soon be on our doorstep, and this
+              feels like something I can move the needle on.
+            </p>
+
+            <h3 className="mt-8 text-2xl font-bold tracking-tight text-gray-900">What I love</h3>
+
+            <p>
+              In the world of engineering, I have a personal fascination with human-computer
+              interaction and intuitive design.
+            </p>
+
+            <p>In the world of earth, I cherish the National Park System.</p>
+
+            <h3 className="mt-8 text-2xl font-bold tracking-tight text-gray-900">What I build</h3>
+            <p>
+              I&apos;m grateful to have worked with some of the most talented designers and
+              engineers over the last decade, building applications which have served millions of
+              users.
+            </p>
+
+            <p>
+              While my focus is on climate, I love chatting about big problems. <br /> Have an idea?
+              Let's chat.
             </p>
           </div>
         </div>
@@ -72,33 +75,13 @@ export default function About() {
   );
 }
 
-function BackgroundPattern() {
+function Background() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      <svg
-        className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="square"
-            width={200}
-            height={200}
-            x="50%"
-            y={-1}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M100 200V.5M.5 .5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-          <path
-            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-            strokeWidth={0}
-          />
-        </svg>
-        <rect width="100%" height="100%" strokeWidth={0} fill="url(#square)" />
-      </svg>
+    <div
+      className="absolute inset-0 -z-10 overflow-hidden bg-linear-to-br from-indigo-50 via-white to-indigo-100"
+      aria-hidden="true"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-indigo-100/20 via-transparent to-transparent" />
     </div>
   );
 }

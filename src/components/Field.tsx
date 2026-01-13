@@ -1,3 +1,5 @@
+"use client";
+
 import React, { ChangeEvent, HTMLProps, useCallback } from "react";
 
 const INPUT_CLASS_NAMES =
@@ -22,20 +24,28 @@ export default function Field({
   onTextChange,
   ...props
 }: TextareaFieldProps | InputFieldProps) {
-  const internalOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
-    // Fire a convenience function to parent, if present
-    onTextChange?.(event.target.value);
-    // Proxy the normal onChange event
-    onChange?.(event);
-  }, []);
+  const internalOnChangeInput = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      // Fire a convenience function to parent, if present
+      onTextChange?.(event.target.value);
+      // Proxy the normal onChange event
+      onChange?.(event as any);
+    },
+    [onChange, onTextChange],
+  );
+
+  const internalOnChangeTextarea = useCallback(
+    (event: ChangeEvent<HTMLTextAreaElement>) => {
+      // Fire a convenience function to parent, if present
+      onTextChange?.(event.target.value);
+      // Proxy the normal onChange event
+      onChange?.(event as any);
+    },
+    [onChange, onTextChange],
+  );
 
   // `as` can't be destructured in the function props above because Typescript won't narrow the type
   const { as, ...nativeProps } = props;
-  const inputProps = {
-    onChange: internalOnChange,
-    className: INPUT_CLASS_NAMES,
-    ...nativeProps,
-  };
 
   return (
     <fieldset>
@@ -43,8 +53,20 @@ export default function Field({
         {label}
       </label>
       <div className="mt-2.5">
-        {props.as === "input" && <input {...inputProps} />}
-        {props.as === "textarea" && <textarea {...inputProps} />}
+        {props.as === "input" && (
+          <input
+            {...(nativeProps as any)}
+            onChange={internalOnChangeInput}
+            className={INPUT_CLASS_NAMES}
+          />
+        )}
+        {props.as === "textarea" && (
+          <textarea
+            {...(nativeProps as any)}
+            onChange={internalOnChangeTextarea}
+            className={INPUT_CLASS_NAMES}
+          />
+        )}
       </div>
     </fieldset>
   );
