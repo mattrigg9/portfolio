@@ -1,5 +1,6 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import React from "react";
+import mattRiggMarkImg from "../images/matt-rigg-mark.svg";
 import ExternalLink from "./ExternalLink";
 
 const social = [
@@ -34,11 +35,12 @@ export default function Footer() {
     <footer className="bg-gray-50" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
-        <Image
-          src="/images/matt-rigg-mark.svg"
+        <ExportedImage
+          src={mattRiggMarkImg}
           alt="Matt Rigg"
           width={300}
           height={200}
+          unoptimized
           className="mx-auto brightness-10 invert-[.1]"
         />
 

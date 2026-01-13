@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import Link from "next/link";
+import mattRiggMarkImg from "../images/matt-rigg-mark.svg";
 import classNames from "../utils/classNames";
 import { smoothScrollToAnchor } from "../utils/smoothScrollTo";
 
@@ -21,8 +22,8 @@ export default function Navbar({ withGradient }: NavbarProps) {
       aria-label="Main navigation"
     >
       <Link href="/" className="-m-1.5 p-1.5 text-2xl font-semibold text-gray-50">
-        <Image
-          src="/images/matt-rigg-mark.svg"
+        <ExportedImage
+          src={mattRiggMarkImg}
           alt="Matt Rigg"
           width={200}
           height={28}
