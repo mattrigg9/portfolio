@@ -1,5 +1,7 @@
-import { Link, graphql, useStaticQuery } from "gatsby";
+"use client";
+
 import React from "react";
+import Link from "next/link";
 import { smoothScrollToAnchor } from "../utils/smoothScrollTo";
 import classNames from "../utils/classNames";
 
@@ -10,14 +12,6 @@ interface NavbarProps {
 }
 
 export default function Navbar({ withGradient }: NavbarProps) {
-  const queryResults = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "matt-rigg-mark.svg" }) {
-        publicURL
-      }
-    }
-  `);
-
   return (
     <nav
       className={classNames(
@@ -26,8 +20,8 @@ export default function Navbar({ withGradient }: NavbarProps) {
       )}
       aria-label="Global"
     >
-      <Link to="/" className="-m-1.5 p-1.5 text-2xl font-semibold text-gray-50">
-        <img src={queryResults.logo.publicURL} alt="Matt Rigg" className="w-fit-content h-7" />
+      <Link href="/" className="-m-1.5 p-1.5 text-2xl font-semibold text-gray-50">
+        <img src="/images/matt-rigg-mark.svg" alt="Matt Rigg" className="w-fit-content h-7" />
       </Link>
 
       <div className="hidden lg:flex lg:flex-1 lg:justify-end">

@@ -1,19 +1,19 @@
-import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
-import Navbar from "./Navbar";
+"use client";
+
+import Image from "next/image";
 import { smoothScrollToAnchor } from "../utils/smoothScrollTo";
 import { LinkButton } from "./Button";
+import Navbar from "./Navbar";
 
 export default function Hero() {
   return (
     <header className="relative h-screen w-full">
       <Navbar />
-      <StaticImage
-        src="../images/mountain-top.jpg"
-        // Absolute must be important to override gatsby-image-wrapper https://github.com/gatsbyjs/gatsby/issues/34457
-        className="!absolute inset-0 -z-30 h-full w-full object-cover"
-        loading="eager"
-        layout="fullWidth"
+      <Image
+        src="/images/mountain-top.jpg"
+        fill
+        className="object-cover -z-30"
+        priority
         quality={90}
         alt="Building a better world."
       />
@@ -24,7 +24,7 @@ export default function Hero() {
             Building a better world.
           </h1>
           <p className="mt-6 px-6 text-lg leading-8 text-gray-50 drop-shadow-md sm:px-12 md:px-0">
-            I use my skills as a software engineer to build solutions for our climate crisis.
+            I use my skills as a software engineer to build amazing solutions for our world.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <LinkButton href="#projects" onClick={smoothScrollToAnchor}>

@@ -1,48 +1,16 @@
-import React, { useMemo } from "react";
+import Image from "next/image";
+import { useMemo } from "react";
 import classNames from "../utils/classNames";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
 
 export default function Testimonials() {
-  // Images cannot be passed to StaticImage as variables, so they must be queried to be managed in an array.
-  const data = useStaticQuery(graphql`
-    {
-      amazonLogo: file(relativePath: { eq: "amazon-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 120, quality: 90, placeholder: NONE)
-        }
-      }
-      placeholder: file(relativePath: { eq: "headshots/placeholder-male.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 80, height: 75, quality: 90, layout: CONSTRAINED)
-        }
-      }
-      ian: file(relativePath: { eq: "headshots/ian-webb.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 75, height: 75, quality: 90)
-        }
-      }
-      trevor: file(relativePath: { eq: "headshots/trevor-gruby.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 75, height: 75, quality: 90)
-        }
-      }
-      nathan: file(relativePath: { eq: "headshots/nathan-fixler.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 75, height: 75, quality: 90)
-        }
-      }
-    }
-  `);
-
   const featuredTestimonial = useMemo(
     () => ({
       body: "Matt is regarded as a pillar of our team. Working tirelessly and without ego, Matt is a rare breed in this industry. His eye for design and user experience shines through in tools that he passionately creates. He is constantly coming up with ideas and mechanisms that I never knew I wanted until I got them.",
       author: {
         name: "Ian Webb",
         title: "Senior Engineer, Amazon",
-        image: data.ian.childImageSharp.gatsbyImageData,
-        companyLogo: data.amazonLogo.childImageSharp.gatsbyImageData,
+        image: "/images/headshots/ian-webb.jpg",
+        companyLogo: "/images/amazon-logo.png",
         companyName: "Amazon",
       },
     }),
@@ -58,7 +26,7 @@ export default function Testimonials() {
             author: {
               name: "Nathan Fixler",
               title: "Senior Engineer, TIME",
-              image: data.nathan.childImageSharp.gatsbyImageData,
+              image: "/images/headshots/nathan-fixler.jpg",
             },
           },
         ],
@@ -70,7 +38,7 @@ export default function Testimonials() {
             author: {
               name: "Trevor Gruby",
               title: "Principal Engineering Manager, Microsoft",
-              image: data.trevor.childImageSharp.gatsbyImageData,
+              image: "/images/headshots/trevor-gruby.jpg",
             },
           },
         ],
@@ -80,7 +48,7 @@ export default function Testimonials() {
             author: {
               name: "Fernando Hernandez",
               title: "Front End Engineer, Amazon",
-              image: data.placeholder.childImageSharp.gatsbyImageData,
+              image: "/images/headshots/placeholder-male.png",
             },
           },
         ],
@@ -91,12 +59,11 @@ export default function Testimonials() {
 
   return (
     <section className="relative min-h-screen" id="testimonials">
-      <StaticImage
-        src="../images/belay.jpg"
-        alt="Mountaineer on belay"
-        // Absolute must be important to override gatsby-image-wrapper https://github.com/gatsbyjs/gatsby/issues/34457
-        className="!absolute -z-10 h-full"
-        imgClassName="lg:object-right-top"
+      <Image
+        src="/images/little-tahoma.jpg"
+        alt="Little Tahoma at Sunrise, Photo by Mario Garcia"
+        fill
+        className="object-cover lg:object-right-top -z-10 object-bottom"
       />
       <div className="mx-auto max-w-7xl px-6 pb-32 pt-24 lg:px-8">
         <header className="mx-auto max-w-xl text-center">
@@ -114,10 +81,12 @@ export default function Testimonials() {
               </p>
             </blockquote>
             <figcaption className="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
-              <GatsbyImage
+              <Image
                 className="h-10 w-10 rounded-full bg-gray-50"
-                image={featuredTestimonial.author.image}
+                src={featuredTestimonial.author.image}
                 alt={featuredTestimonial.author.name}
+                width={40}
+                height={40}
               />
 
               <div className="flex-auto">
@@ -125,9 +94,11 @@ export default function Testimonials() {
                 <div className="text-gray-600">{featuredTestimonial.author.title}</div>
               </div>
               {featuredTestimonial.author.companyLogo && (
-                <GatsbyImage
-                  image={featuredTestimonial.author.companyLogo}
+                <Image
+                  src={featuredTestimonial.author.companyLogo}
                   alt={featuredTestimonial.author.companyName}
+                  width={120}
+                  height={40}
                 />
               )}
             </figcaption>
@@ -156,10 +127,12 @@ export default function Testimonials() {
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
                         {testimonial.author.image && (
-                          <GatsbyImage
+                          <Image
                             className="h-10 w-10 rounded-full bg-gray-50"
-                            image={testimonial.author.image}
+                            src={testimonial.author.image}
                             alt={testimonial.author.name}
+                            width={40}
+                            height={40}
                           />
                         )}
                         <div>

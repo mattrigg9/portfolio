@@ -1,11 +1,10 @@
-import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
+import Image from "next/image";
 
 export default function About() {
   return (
     <section className="relative px-6 py-24 sm:py-32 lg:px-0" id="about">
       <BackgroundPattern />
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
         <header className="w-full max-w-7xl lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:gap-x-8 lg:px-8">
           <p className="text-base font-semibold leading-7 text-primary">Build better</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -16,54 +15,55 @@ export default function About() {
           </p>
         </header>
         <div className="lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:-mt-12 lg:overflow-hidden lg:p-12">
-          <StaticImage
-            src="../images/matt-rigg.jpg"
+          <Image
+            src="/images/matt-rigg.jpg"
             alt="Matt Rigg"
-            objectPosition="center left"
-            className="!sm:block !hidden max-h-[65rem] w-[55rem] rounded-xl shadow-xl ring-1 ring-gray-400/10"
+            width={700}
+            height={1040}
+            className="hidden sm:block max-h-45rem w-55rem rounded-xl shadow-xl ring-1 ring-gray-400/10 object-cover object-center-left"
           />
-          <StaticImage
-            src="../images/matt-rigg-cropped.jpg"
+          <Image
+            src="/images/matt-rigg-cropped.jpg"
             alt="Matt Rigg"
-            objectPosition="center left"
-            className="!sm:hidden w-full rounded-xl shadow-xl ring-1 ring-gray-400/10"
+            width={800}
+            height={800}
+            className="sm:hidden w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 object-cover object-center-left"
           />
         </div>
         <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:pr-4">
-          <div className="max-w-xl leading-7 lg:max-w-lg">
+          <div className="max-w-xl leading-7 lg:max-w-lg flex flex-col gap-4">
             <p>
-              Thoughtful and delicate interactions are the cornerstones of how people see a
-              product's value. These often subtle interfaces can quietly but undoubtedly sway a
+              I have a personal obsession with human-computer interaction.
+            </p>
+            <p>
+              Thoughtful and delicate interactions are the cornerstones of how people perceive the value of a product.
+              These often subtle moments can quietly but undoubtedly sway a
               user's impression of a product. Understanding this psychology is critical to building
               a product that people want to come back to time and time again.
             </p>
-            <p className="mt-6">
-              A well made application is like an airport. No matter where the user is, they always
-              have just the right level of context to orient themselves and know where to go next.
-              Providing a user with this sense of control enables them to expertly navigate with
-              little to no effort, no matter how large or complex.
-            </p>
-            <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">What I build</h2>
-            <p className="mt-4">
-              I build enterprise-scale Web and React Native applications using the latest adopted
+
+            <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900">What I build</h2>
+            <p>
+              I build enterprise-scale applications using the latest adopted
               standards. I'm grateful to have worked with some of the most talented designers and
               engineers in the market, building applications which have served millions of users.
             </p>
-            <p className="mt-4">
-              As a 7+ year AWS veteran, I have intimate experience with building high-availability
+            <p>
+              With over a decade of experience, and as a 7+ year AWS veteran, I have intimate experience with building high-availability
               and scalable applications in a way that's performant and cost-effective for any use
               case.
             </p>
 
-            <h2 className="mt-12 text-2xl font-bold tracking-tight text-gray-900">
-              Building climate solutions
+            <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-900">
+              Inventing climate solutions
             </h2>
-            <p className="mt-4">
-              I am deeply passionate about using my skills to build solutions for the most important
-              crisis of our time. I am actively pursuing opportunities and projects that materially
-              improve our planet. It's promising to see solutions beginning to scale, but we must
-              continue to rage against humanity's slow progress on climate action. CO2 removal,
-              emissions reduction, and energy grid modernization are all areas of interest.
+            <p>
+              I believe the climate crisis is one of the most pressing challenges of our time.
+              
+              Some solutions are beginning to scale, but we must
+              continue to rage against humanity's slow progress on climate action on all fronts.
+              Carbon sequestration, emissions reduction, and energy grid modernization are some of the most
+              compelling challenges that we can tackle today.
             </p>
           </div>
         </div>
@@ -76,7 +76,7 @@ function BackgroundPattern() {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       <svg
-        className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+        className="absolute left-[max(50%,25rem)] top-0 h-64rem w-128rem -translate-x-1/2 stroke-gray-200 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)]"
         aria-hidden="true"
       >
         <defs>
