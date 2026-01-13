@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+import ExternalLink from "./ExternalLink";
 
 const social = [
   {
@@ -29,29 +31,29 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50">
+    <footer className="bg-gray-50" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">Footer</h2>
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-700 sm:text-5xl">
-          <img
-            src="/images/matt-rigg-mark.svg"
-            alt="Matt Rigg"
-            className="w-fit-content brightness-10 mx-auto h-12 invert-[.1]"
-          />
-        </h2>
+        <Image
+          src="/images/matt-rigg-mark.svg"
+          alt="Matt Rigg"
+          width={300}
+          height={200}
+          className="mx-auto brightness-10 invert-[.1]"
+        />
 
-        <div className="mt-10 flex justify-center space-x-10">
+        <nav className="mt-10 flex justify-center gap-10" aria-label="Social media links">
           {social.map((item) => (
-            <a
+            <ExternalLink
               key={item.name}
               href={item.href}
-              className="text-gray-600 hover:text-gray-700"
-              target="_blank"
+              className="text-gray-600 hover:text-gray-700 transition-colors"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="size-8" aria-hidden="true" />
-            </a>
+            </ExternalLink>
           ))}
-        </div>
+        </nav>
         <p className="mt-10 text-center text-sm leading-5 text-gray-600">
           &copy; {year} Matt Rigg. All rights reserved.
         </p>
