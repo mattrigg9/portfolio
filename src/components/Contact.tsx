@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import { FormEvent, useState } from "react";
+import icebergImg from "../images/iceberg.jpg";
 import Button from "./Button";
 import ExternalLink from "./ExternalLink";
 import Field from "./Field";
@@ -77,9 +78,9 @@ export default function Contact() {
 
   return (
     <section className="relative h-full max-h-[55rem] min-h-screen" id="contact" aria-labelledby="contact-heading">
-      <Image
-        src="/images/iceberg.jpg"
-        alt=""
+      <ExportedImage
+        src={icebergImg}
+        alt="Iceberg"
         fill
         className="object-cover object-top-right -z-10"
         role="presentation"

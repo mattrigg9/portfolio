@@ -28,7 +28,7 @@ export default function SectionHeader({
         {heading}
       </HeadingTag>
       {description && (
-        <p className={`mt-6 text-lg leading-8 ${descriptionColor}`}>
+        <p className={`lg:mt-6 mt-2 text-lg leading-8 ${descriptionColor}`}>
           {description}
         </p>
       )}

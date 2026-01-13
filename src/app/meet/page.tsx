@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import ExportedImage from "next-image-export-optimizer";
 import Script from "next/script";
-import Image from "next/image";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import { LinkButton } from "../../components/Button";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
+import redwoodsImg from "../../images/redwoods.jpg";
 
 export const metadata: Metadata = {
   title: "Schedule a Meeting - Matt Rigg",
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
 export default function MeetPage() {
   return (
     <main className="relative">
-      <Image
-        src="/images/redwoods.jpg"
+      <ExportedImage
+        src={redwoodsImg}
         alt="Redwood forest"
         fill
         className="brightness-70 -z-10 object-cover object-center"
-        priority
+        preload
       />
       <Navbar withGradient />
       <section className="relative mx-4 my-8 min-h-[80vh] md:my-28">

@@ -1,12 +1,19 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
+import { StaticImageData } from 'next/image';
 import { useMemo } from "react";
+import amazonLogoImg from "../images/amazon-logo.png";
+import ianWebbImg from "../images/headshots/ian-webb.jpg";
+import nathanFixlerImg from "../images/headshots/nathan-fixler.jpg";
+import placeholderMaleImg from "../images/headshots/placeholder-male.png";
+import trevorGrubyImg from "../images/headshots/trevor-gruby.jpg";
+import littleTahomaImg from "../images/little-tahoma.jpg";
 import SectionHeader from "./SectionHeader";
 
 interface Author {
   name: string;
   title: string;
-  image: string;
-  companyLogo?: string;
+  image: StaticImageData;
+  companyLogo?: StaticImageData;
   companyName?: string;
 }
 
@@ -23,10 +30,10 @@ function TestimonialCard({ testimonial, featured = false }: { testimonial: Testi
           <p>{testimonial.body}</p>
         </blockquote>
         <figcaption className="mt-auto flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
-          <Image
+          <ExportedImage
             className="h-10 w-10 flex-none rounded-full bg-gray-50"
             src={testimonial.author.image}
-            alt=""
+            alt={testimonial.author.name}
             width={40}
             height={40}
           />
@@ -35,7 +42,7 @@ function TestimonialCard({ testimonial, featured = false }: { testimonial: Testi
             <div className="text-gray-600">{testimonial.author.title}</div>
           </div>
           {testimonial.author.companyLogo && testimonial.author.companyName && (
-            <Image
+            <ExportedImage
               src={testimonial.author.companyLogo}
               alt={testimonial.author.companyName}
               width={120}
@@ -54,10 +61,10 @@ function TestimonialCard({ testimonial, featured = false }: { testimonial: Testi
         <p>{testimonial.body}</p>
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-x-4">
-        <Image
+        <ExportedImage
           className="h-10 w-10 flex-none rounded-full bg-gray-50"
           src={testimonial.author.image}
-          alt=""
+          alt={testimonial.author.name}
           width={40}
           height={40}
         />
@@ -77,8 +84,8 @@ export default function Testimonials() {
       author: {
         name: "Ian Webb",
         title: "Senior Engineer, Amazon",
-        image: "/images/headshots/ian-webb.jpg",
-        companyLogo: "/images/amazon-logo.png",
+        image: ianWebbImg,
+        companyLogo: amazonLogoImg,
         companyName: "Amazon",
       },
     }),
@@ -92,7 +99,7 @@ export default function Testimonials() {
         author: {
           name: "Nathan Fixler",
           title: "Senior Engineer, TIME",
-          image: "/images/headshots/nathan-fixler.jpg",
+          image: nathanFixlerImg,
         },
       },
       {
@@ -100,7 +107,7 @@ export default function Testimonials() {
         author: {
           name: "Trevor Gruby",
           title: "Principal Engineering Manager, Microsoft",
-          image: "/images/headshots/trevor-gruby.jpg",
+          image: trevorGrubyImg,
         },
       },
       {
@@ -108,7 +115,7 @@ export default function Testimonials() {
         author: {
           name: "Fernando Hernandez",
           title: "Front End Engineer, Amazon",
-          image: "/images/headshots/placeholder-male.png",
+          image: placeholderMaleImg,
         },
       },
     ],
@@ -117,9 +124,9 @@ export default function Testimonials() {
 
   return (
     <section className="relative min-h-screen" id="testimonials" aria-labelledby="testimonials-heading">
-      <Image
-        src="/images/little-tahoma.jpg"
-        alt=""
+      <ExportedImage
+        src={littleTahomaImg}
+        alt="Little Tahoma Mountain"
         fill
         className="object-cover lg:object-top-right -z-10 object-bottom"
         role="presentation"

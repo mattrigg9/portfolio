@@ -1,12 +1,19 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
+import { StaticImageData } from 'next/image';
 import { useMemo } from "react";
+import alexaBlueprintsImg from "../images/alexa-blueprints.jpg";
+import amazonCareImg from "../images/amazon-care.png";
+import harbingerImg from "../images/harbinger.png";
+import noomImg from "../images/noom.png";
+import sioImg from "../images/sio.png";
+import timeCo2Img from "../images/time-co2.png";
 import ExternalLink from "./ExternalLink";
 import SectionHeader from "./SectionHeader";
 
 interface Project {
   name: string;
   role: string;
-  image: string;
+  image: StaticImageData;
   bio: string;
   website?: string;
 }
@@ -14,11 +21,9 @@ interface Project {
 function ProjectCard({ project }: { project: Project }) {
   const content = (
     <>
-      <Image
+      <ExportedImage
         src={project.image}
-        alt=""
-        width={400}
-        height={267}
+        alt={project.name}
         className="aspect-3/2 w-full rounded-xl object-cover shadow-md ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-[1.01]"
         role="presentation"
       />
@@ -75,41 +80,41 @@ export default function Projects() {
       {
         name: "Building Decarbonization Coalition",
         role: "Head of Engineering",
-        image: "/images/sio.png",
+        image: sioImg,
         bio: "Decarbonizing the built environment through electrification. Rebuilt The Switch Is On platform to help homeowners upgrade to electric. 20k electrification leads generated in the first year of the relaunch.",
         website: "https://switchison.org/",
       },
       {
         name: "TIME CO2",
         role: "Lead Developer",
-        image: "/images/time-co2.png",
+        image: timeCo2Img,
         bio: "Portfolios of high-quality carbon-offset projects to help companies accelerate their journey to net-zero emissions with nature-positive impact.",
         website: "https://co2.com/",
       },
       {
         name: "Noom",
         role: "Lead Developer",
-        image: "/images/noom.png",
+        image: noomImg,
         bio: "Led engineering team in international expansion. Launched in four new locales, drove new security campaigns, and eliminated 29k lines of maintainable code. Improved go-to-market speed for new locales by 400%.",
         website: "https://blueprints.amazon.com/",
       },
       {
         name: "Amazon Care",
         role: "Senior Engineer",
-        image: "/images/amazon-care.png",
+        image: amazonCareImg,
         bio: "A magical telehealth experience with in-person care services. Successfully launched the platform with a CSAT score of 4.7/5. Jointly designed and built the logistics platform that supports dispatching in-person care to patients across the country.",
       },
       {
         name: "Alexa Blueprints",
         role: "Lead Developer",
-        image: "/images/alexa-blueprints.jpg",
+        image: alexaBlueprintsImg,
         bio: "A new way to let anyone create their own Alexa skills, with no coding required. At launch, this project doubled the number of skills in the Alexa marketplace in less than 24 hours.",
         website: "https://blueprints.amazon.com/",
       },
       {
         name: "Harbinger",
         role: "Founder and Developer",
-        image: "/images/harbinger.png",
+        image: harbingerImg,
         bio: "Enterprise Tier-1 event and escalation workflow platform. Reduced average engagement time by over 60% and now used by nearly every customer-facing team across AWS.",
       },
     ],

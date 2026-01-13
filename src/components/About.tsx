@@ -1,28 +1,30 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
+import mattRiggImg from "../images/matt-rigg.jpg";
 import SectionHeader from "./SectionHeader";
 
 export default function About() {
   return (
-    <section className="relative px-6 py-24 sm:py-32 lg:px-0" id="about" aria-labelledby="about-heading">
-      <BackgroundPattern />
-      <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
+    <section className="relative lg:px-6 px-2 py-24 sm:py-32" id="about" aria-labelledby="about-heading">
+      <Background />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 px-4 lg:px-6 gap-y-8 lg:grid-cols-2 lg:items-start">
         <SectionHeader
           eyebrow="Build better"
           heading="Hi, I'm Matt."
           description="I build applications that people love to use."
           headingLevel="h2"
-          className="w-full max-w-7xl lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:px-8"
+          className="w-full max-w-7xl lg:col-start-1 lg:row-start-1 lg:mx-auto lg:px-8"
         />
-        <div className="lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:-mt-12 lg:p-12">
-          <Image
-            src="/images/matt-rigg.jpg"
+        <div className="relative mx-auto lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 w-full aspect-3/4 max-h-[60rem] max-w-[45rem] lg:-mt-12 lg:p-12 lg:mx-0">
+          <ExportedImage
+            src={mattRiggImg}
+            fill
             alt="Portrait of Matt Rigg"
-            width={700}
-            height={1040}
-            className="max-h-45rem w-full rounded-xl shadow-xl ring-1 ring-gray-400/10 object-cover object-center-left"
+            className="hover:scale-[1.008] transition-transform duration-500 rounded-xl shadow-xl ring-1 ring-gray-400/10 object-cover object-center"
+            draggable={false}
+            role="presentation"
           />
         </div>
-        <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:px-8">
+        <div className="lg:col-start-1 lg:row-start-2 lg:mx-auto lg:w-full lg:max-w-7xl lg:px-8">
           <div className="max-w-xl leading-7 lg:max-w-lg space-y-4">
             <p>
               I have a personal obsession with human-computer interaction and complex problem solving.
@@ -64,33 +66,13 @@ export default function About() {
   );
 }
 
-function BackgroundPattern() {
+function Background() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
-      <svg
-        className="absolute left-[max(50%,25rem)] top-0 h-64rem w-128rem -translate-x-1/2 stroke-gray-200 mask-[radial-gradient(64rem_64rem_at_top,white,transparent)]"
-        role="presentation"
-      >
-        <defs>
-          <pattern
-            id="square"
-            width={200}
-            height={200}
-            x="50%"
-            y={-1}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M100 200V.5M.5 .5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-          <path
-            d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-            strokeWidth={0}
-          />
-        </svg>
-        <rect width="100%" height="100%" strokeWidth={0} fill="url(#square)" />
-      </svg>
+    <div 
+      className="absolute inset-0 -z-10 overflow-hidden bg-linear-to-br from-indigo-50 via-white to-indigo-100" 
+      aria-hidden="true"
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-indigo-100/20 via-transparent to-transparent" />
     </div>
   );
 }
