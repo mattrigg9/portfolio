@@ -1,8 +1,76 @@
 import Image from "next/image";
 import { useMemo } from "react";
+import ExternalLink from "./ExternalLink";
+import SectionHeader from "./SectionHeader";
+
+interface Project {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  website?: string;
+}
+
+function ProjectCard({ project }: { project: Project }) {
+  const content = (
+    <>
+      <Image
+        src={project.image}
+        alt=""
+        width={400}
+        height={267}
+        className="aspect-3/2 w-full rounded-xl object-cover shadow-md ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-[1.01]"
+        role="presentation"
+      />
+      <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">
+        {project.name}
+      </h3>
+      <p className="text-base leading-7 text-gray-600">{project.role}</p>
+      <p className="mt-4 text-base leading-7 text-gray-600">{project.bio}</p>
+    </>
+  );
+
+  if (project.website) {
+    return (
+      <li className="group">
+        <article>
+          <ExternalLink
+            href={project.website}
+            className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-xl"
+          >
+            {content}
+            <span className="mt-4 flex items-center gap-1 text-primary group-hover:underline">
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+              Visit website
+            </span>
+          </ExternalLink>
+        </article>
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <article>{content}</article>
+    </li>
+  );
+}
 
 export default function Projects() {
-  const projects = useMemo(
+  const projects = useMemo<Project[]>(
     () => [
       {
         name: "Building Decarbonization Coalition",
@@ -29,7 +97,7 @@ export default function Projects() {
         name: "Amazon Care",
         role: "Senior Engineer",
         image: "/images/amazon-care.png",
-        bio: " A magical telehealth experience with in-person care services. Successfully launched the platform with a CSAT score of 4.7/5. Jointly designed and built the logistics platform that supports dispatching in-person care to patients across the country.",
+        bio: "A magical telehealth experience with in-person care services. Successfully launched the platform with a CSAT score of 4.7/5. Jointly designed and built the logistics platform that supports dispatching in-person care to patients across the country.",
       },
       {
         name: "Alexa Blueprints",
@@ -38,7 +106,6 @@ export default function Projects() {
         bio: "A new way to let anyone create their own Alexa skills, with no coding required. At launch, this project doubled the number of skills in the Alexa marketplace in less than 24 hours.",
         website: "https://blueprints.amazon.com/",
       },
-
       {
         name: "Harbinger",
         role: "Founder and Developer",
@@ -50,58 +117,17 @@ export default function Projects() {
   );
 
   return (
-    <section className="relative my-8 py-8 md:my-32" id="projects">
+    <section className="relative my-8 py-8 md:my-32" id="projects" aria-labelledby="projects-heading">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
-        <header className="mx-auto max-w-2xl lg:mx-0 xl:sticky xl:top-8 xl:self-start">
-          <p className="text-base font-semibold leading-7 text-primary">Build big</p>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            My Projects
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Over ten years of successfully launching applications to millions of users.
-          </p>
-        </header>
-        <ul
-          role="list"
-          className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2"
-        >
+        <SectionHeader
+          eyebrow="Build big"
+          heading="My Projects"
+          description="Over ten years of successfully launching applications to millions of users."
+          className="mx-auto max-w-2xl lg:mx-0 xl:sticky xl:top-8 xl:self-start"
+        />
+        <ul className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:gap-x-8 xl:col-span-2">
           {projects.map((project) => (
-            <li key={project.name} className="relative group">
-              {project.website && (
-                             <a
-                  href={project.website}
-                  className="group absolute inset-0"
-                  target="_blank"
-                  rel="noreferrer"
-                />
-                )}
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={400}
-                height={267}
-                className="aspect-3/2 group-hover:scale-101 transition-all duration-300 w-full rounded-xl object-cover shadow-md ring-1 ring-gray-400/10"
-              />
-              <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">{project.name}</h3>
-              <p className="text-base leading-7 text-gray-600">{project.role}</p>
-              <p className="mt-4 text-base leading-7 text-gray-600">{project.bio}</p>
-              {project.website && (
-                <p className="mt-4 text-sm flex items-center gap-1">
-               
-                  <svg
-                    className="h-5 w-5"
-                    stroke="currentColor"
-                    fill="currentColor"
-                    strokeWidth={0}
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M10 3V5H5V19H19V14H21V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H10ZM17.5858 5H13V3H21V11H19V6.41421L12 13.4142L10.5858 12L17.5858 5Z"></path>
-                  </svg>
-                  <span className='group-hover:underline'>Website</span>
-                  </p>
-              )}
-            </li>
+            <ProjectCard key={project.name} project={project} />
           ))}
         </ul>
       </div>

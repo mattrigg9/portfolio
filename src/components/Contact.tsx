@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 import Button from "./Button";
+import ExternalLink from "./ExternalLink";
 import Field from "./Field";
+import SectionHeader from "./SectionHeader";
 
 interface SubmitContactFormRequest {
   name?: string;
@@ -32,9 +34,9 @@ const createContactRequest = async (request: SubmitContactFormRequest): Promise<
   }
 };
 
-function SuccessMessage({ className }: { className: string }) {
+function SuccessMessage() {
   return (
-    <div className={`${className} flex h-full w-full justify-center text-center`}>
+    <div className="flex h-full justify-center text-center" role="status" aria-live="polite">
       <div className="m-auto">
         <h3 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Thanks!
@@ -72,79 +74,90 @@ export default function Contact() {
       .finally(() => setIsLoading(false));
   };
 
+
   return (
-    <section className="relative h-full max-h-[55rem] min-h-screen" id="contact">
+    <section className="relative h-full max-h-[55rem] min-h-screen" id="contact" aria-labelledby="contact-heading">
       <Image
         src="/images/iceberg.jpg"
-        alt="Landscape with iceberg"
+        alt=""
         fill
         className="object-cover object-top-right -z-10"
+        role="presentation"
       />
       <div className="px-6 py-24 sm:py-32 lg:px-8">
-        <header className="mx-auto max-w-2xl text-center">
-          <p className="text-base font-semibold leading-7 text-primary">Want to work together?</p>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Let's talk
-          </h2>
-        </header>
+        <SectionHeader
+          eyebrow="Want to work together?"
+          heading="Let's talk"
+          className="mx-auto max-w-2xl text-center"
+        />
         <div className="relative mx-auto mt-16 max-w-xl overflow-hidden rounded-xl bg-white/30 p-4 backdrop-blur-md backdrop-brightness-[1.05] sm:p-8">
           {isError && <ErrorMessage />}
           <form
-            action="#" // TODO: Update API endpoint to redirect to site to support JS-disabled browsers
+            action="https://contact.mattrigg.dev/"
             className={`transition-transform duration-500 ${
               isSuccess ? "translate-y-[-50rem]" : "translate-y-0"
             }`}
             method="POST"
             onSubmit={handleSubmit}
+            aria-hidden={isSuccess}
           >
-            <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-              <Field
-                as="input"
-                autoComplete="name"
-                label="Name"
-                name="name"
-                onTextChange={setName}
-                required
-              />
-
-              <Field
-                as="input"
-                autoComplete="email"
-                label="Email"
-                name="email"
-                onTextChange={setEmail}
-                required
-                type="email"
-              />
-
-              <div className="sm:col-span-2">
+            <fieldset disabled={isLoading} className="contents">
+              <legend className="sr-only">Contact form</legend>
+              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <Field
-                  as="textarea"
-                  label="Message"
-                  name="message"
-                  onTextChange={setMessage}
+                  as="input"
+                  autoComplete="name"
+                  label="Name"
+                  name="name"
+                  onTextChange={setName}
                   required
-                  rows={4}
                 />
+
+                <Field
+                  as="input"
+                  autoComplete="email"
+                  label="Email"
+                  name="email"
+                  onTextChange={setEmail}
+                  required
+                  type="email"
+                />
+
+                <div className="sm:col-span-2">
+                  <Field
+                    as="textarea"
+                    label="Message"
+                    name="message"
+                    onTextChange={setMessage}
+                    required
+                    rows={4}
+                  />
+                </div>
               </div>
-            </div>
+            </fieldset>
             <div className="mt-10 flex flex-col items-center gap-4">
               <Button type="submit" isLoading={isLoading}>
                 Send Message
               </Button>
 
-              <p>or</p>
+              <p className="text-gray-800">or</p>
 
-              <a href="/meet/" target="_blank" className="font-semibold leading-6 text-gray-800 hover:text-indigo-950 transition-colors">
+              <ExternalLink
+                href="/meet/"
+                className="font-semibold leading-6 text-gray-800 hover:text-indigo-950 transition-colors"
+              >
                 Schedule a meeting <span aria-hidden="true">&rarr;</span>
-              </a>
+              </ExternalLink>
             </div>
           </form>
-          <SuccessMessage
-            className={`absolute left-0 top-0 transition-transform duration-500 ${
+          <div
+            className={`absolute left-0 top-0 w-full transition-transform duration-500 h-full ${
               isSuccess ? "translate-y-0" : "translate-y-[50rem]"
             }`}
-          />
+            aria-hidden={!isSuccess}
+          >
+            {isSuccess && <SuccessMessage />}
+          </div>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes, PropsWithChildren } from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, PropsWithChildren } from "react";
 import classNames from "../utils/classNames";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,8 +14,7 @@ function SpinningIndicator() {
   return (
     <svg
       aria-hidden="true"
-      role="status"
-      className="me-3 inline h-4 w-4 text-white"
+      className="me-3 inline h-4 w-4 animate-spin text-white"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -40,23 +39,25 @@ export function LinkButton({ children, ...props }: LinkButtonProps) {
   );
 }
 
-/**
- * Basic abstraction to provide a loading state.
- * TODO: Consider abstracting this further to provide a standard design language.
- */
 export default function Button({ isLoading, children, ...props }: ButtonProps) {
   return (
     <button
       type="button"
       {...props}
       disabled={props.disabled || isLoading}
+      aria-busy={isLoading}
       className={classNames(
         BUTTON_CLASSES,
         "disabled:pointer-events-none disabled:cursor-default disabled:opacity-80",
         props.className,
       )}
     >
-      {isLoading && <SpinningIndicator />}
+      {isLoading && (
+        <>
+          <SpinningIndicator />
+          <span className="sr-only">Loading</span>
+        </>
+      )}
       {children}
     </button>
   );

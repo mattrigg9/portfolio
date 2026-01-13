@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "deploy": "npm run build && aws s3 sync out/ s3://mattrigg-portfolio --delete && aws cloudfront create-invalidation --profile personal --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
+    "deploy": "npm run build && aws s3 sync out/ s3://mattrigg-portfolio --delete --profile personal && aws cloudfront create-invalidation --profile personal --distribution-id E3LKSRLOODHS99 --paths \"/*\"",
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier --write '**/*.{js,ts,jsx,tsx}'"
