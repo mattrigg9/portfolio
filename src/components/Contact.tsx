@@ -75,14 +75,17 @@ export default function Contact() {
       .finally(() => setIsLoading(false));
   };
 
-
   return (
-    <section className="relative h-full max-h-[55rem] min-h-screen" id="contact" aria-labelledby="contact-heading">
+    <section
+      className="relative h-full max-h-[55rem] min-h-screen"
+      id="contact"
+      aria-labelledby="contact-heading"
+    >
       <ExportedImage
         src={icebergImg}
         alt="Iceberg"
         fill
-        className="object-cover object-top-right -z-10"
+        className="-z-10 object-cover object-top-right"
         role="presentation"
       />
       <div className="px-6 py-24 sm:py-32 lg:px-8">
@@ -145,14 +148,14 @@ export default function Contact() {
 
               <ExternalLink
                 href="/meet/"
-                className="font-semibold leading-6 text-gray-800 hover:text-indigo-950 transition-colors"
+                className="leading-6 font-semibold text-gray-800 transition-colors hover:text-indigo-950"
               >
                 Schedule a meeting <span aria-hidden="true">&rarr;</span>
               </ExternalLink>
             </div>
           </form>
           <div
-            className={`absolute left-0 top-0 w-full transition-transform duration-500 h-full ${
+            className={`absolute top-0 left-0 h-full w-full transition-transform duration-500 ${
               isSuccess ? "translate-y-0" : "translate-y-[50rem]"
             }`}
             aria-hidden={!isSuccess}

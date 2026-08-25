@@ -22,18 +22,13 @@ export default function Navbar({ withGradient }: NavbarProps) {
       aria-label="Main navigation"
     >
       <Link href="/" className="-m-1.5 p-1.5 text-2xl font-semibold text-gray-50">
-        <ExportedImage
-          src={mattRiggMarkImg}
-          alt="Matt Rigg"
-          width={200}
-          height={28}
-        />
+        <ExportedImage src={mattRiggMarkImg} alt="Matt Rigg" width={200} height={28} />
       </Link>
 
       <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         <a
           href="/#contact"
-          className="font-semibold leading-6 text-gray-50 hover:text-gray-200 transition-colors"
+          className="leading-6 font-semibold text-gray-50 transition-colors hover:text-gray-200"
           onClick={smoothScrollToAnchor}
         >
           Contact <span aria-hidden="true">&rarr;</span>

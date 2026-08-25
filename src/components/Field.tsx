@@ -48,9 +48,13 @@ export default function Field({
 
   return (
     <div>
-      <label className="block text-sm font-semibold leading-6 text-gray-900" htmlFor={props.name}>
+      <label className="block text-sm leading-6 font-semibold text-gray-900" htmlFor={props.name}>
         {label}
-        {required && <span className="text-red-600 ml-1" aria-label="required">*</span>}
+        {required && (
+          <span className="ml-1 text-red-600" aria-label="required">
+            *
+          </span>
+        )}
       </label>
       <div className="mt-2.5">
         {props.as === "input" && (

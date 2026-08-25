@@ -33,7 +33,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-50" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" className="sr-only">Footer</h2>
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
       <div className="mx-auto max-w-7xl px-6 py-20 sm:py-24 lg:px-8">
         <ExportedImage
           src={mattRiggMarkImg}
@@ -49,7 +51,7 @@ export default function Footer() {
             <ExternalLink
               key={item.name}
               href={item.href}
-              className="text-gray-600 hover:text-gray-700 transition-colors"
+              className="text-gray-600 transition-colors hover:text-gray-700"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="size-8" aria-hidden="true" />

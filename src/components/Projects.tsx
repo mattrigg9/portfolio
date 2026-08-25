@@ -1,5 +1,5 @@
 import ExportedImage from "next-image-export-optimizer";
-import { StaticImageData } from 'next/image';
+import { StaticImageData } from "next/image";
 import { useMemo } from "react";
 import alexaBlueprintsImg from "../images/alexa-blueprints.jpg";
 import amazonCareImg from "../images/amazon-care.png";
@@ -27,9 +27,7 @@ function ProjectCard({ project }: { project: Project }) {
         className="aspect-3/2 w-full rounded-xl object-cover shadow-md ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-[1.01]"
         role="presentation"
       />
-      <h3 className="mt-6 text-lg font-semibold leading-8 text-gray-900">
-        {project.name}
-      </h3>
+      <h3 className="mt-6 text-lg leading-8 font-semibold text-gray-900">{project.name}</h3>
       <p className="text-base leading-7 text-gray-600">{project.role}</p>
       <p className="mt-4 text-base leading-7 text-gray-600">{project.bio}</p>
     </>
@@ -41,10 +39,10 @@ function ProjectCard({ project }: { project: Project }) {
         <article>
           <ExternalLink
             href={project.website}
-            className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 rounded-xl"
+            className="block rounded-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             {content}
-            <span className="mt-4 flex items-center gap-1 text-primary group-hover:underline">
+            <span className="text-primary mt-4 flex items-center gap-1 group-hover:underline">
               <svg
                 className="h-4 w-4"
                 fill="none"
@@ -122,7 +120,11 @@ export default function Projects() {
   );
 
   return (
-    <section className="relative my-8 py-8 md:my-32" id="projects" aria-labelledby="projects-heading">
+    <section
+      className="relative my-8 py-8 md:my-32"
+      id="projects"
+      aria-labelledby="projects-heading"
+    >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
         <SectionHeader
           eyebrow="Build big"

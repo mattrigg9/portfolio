@@ -17,7 +17,7 @@ export default function MeetPage() {
         src={redwoodsImg}
         alt="Redwood forest"
         fill
-        className="brightness-70 -z-10 object-cover object-center"
+        className="-z-10 object-cover object-center brightness-70"
         preload
       />
       <Navbar withGradient />
@@ -49,12 +49,9 @@ export default function MeetPage() {
         </div>
       </section>
       <Footer />
-      
+
       {/* Calendly Script */}
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
     </main>
   );
 }

@@ -3,7 +3,8 @@ import Script from "next/script";
 import "./app.css";
 
 const title = "Building a Better World - Matt Rigg";
-const description = "Matt Rigg is a software engineer and entrepreneur based in Seattle who is using his skills to combat the climate crisis.";
+const description =
+  "Matt Rigg is a software engineer and entrepreneur based in Seattle who is using his skills to combat the climate crisis.";
 
 export const metadata: Metadata = {
   title,

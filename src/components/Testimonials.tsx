@@ -1,5 +1,5 @@
 import ExportedImage from "next-image-export-optimizer";
-import { StaticImageData } from 'next/image';
+import { StaticImageData } from "next/image";
 import { useMemo } from "react";
 import amazonLogoImg from "../images/amazon-logo.png";
 import ianWebbImg from "../images/headshots/ian-webb.jpg";
@@ -22,11 +22,17 @@ interface Testimonial {
   author: Author;
 }
 
-function TestimonialCard({ testimonial, featured = false }: { testimonial: Testimonial; featured?: boolean }) {
+function TestimonialCard({
+  testimonial,
+  featured = false,
+}: {
+  testimonial: Testimonial;
+  featured?: boolean;
+}) {
   if (featured) {
     return (
       <figure className="col-span-2 hidden sm:flex sm:flex-col sm:rounded-xl sm:bg-white sm:shadow-lg sm:ring-1 sm:ring-gray-900/5 xl:col-start-2 xl:row-end-1">
-        <blockquote className="p-12 text-xl font-semibold leading-8 tracking-tight text-gray-900">
+        <blockquote className="p-12 text-xl leading-8 font-semibold tracking-tight text-gray-900">
           <p>{testimonial.body}</p>
         </blockquote>
         <figcaption className="mt-auto flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
@@ -57,7 +63,7 @@ function TestimonialCard({ testimonial, featured = false }: { testimonial: Testi
 
   return (
     <figure className="rounded-xl bg-white p-8 shadow-lg ring-1 ring-gray-900/5">
-      <blockquote className="text-gray-900 text-lg">
+      <blockquote className="text-lg text-gray-900">
         <p>{testimonial.body}</p>
       </blockquote>
       <figcaption className="mt-6 flex items-center gap-x-4">
@@ -69,7 +75,7 @@ function TestimonialCard({ testimonial, featured = false }: { testimonial: Testi
           height={40}
         />
         <div>
-          <div className="font-semibold leading-7">{testimonial.author.name}</div>
+          <div className="leading-7 font-semibold">{testimonial.author.name}</div>
           <div className="text-gray-600">{testimonial.author.title}</div>
         </div>
       </figcaption>
@@ -123,15 +129,19 @@ export default function Testimonials() {
   );
 
   return (
-    <section className="relative min-h-screen" id="testimonials" aria-labelledby="testimonials-heading">
+    <section
+      className="relative min-h-screen"
+      id="testimonials"
+      aria-labelledby="testimonials-heading"
+    >
       <ExportedImage
         src={littleTahomaImg}
         alt="Little Tahoma Mountain"
         fill
-        className="object-cover lg:object-top-right -z-10 object-bottom"
+        className="-z-10 object-cover object-bottom lg:object-top-right"
         role="presentation"
       />
-      <div className="mx-auto max-w-screen-2xl px-6 pb-32 pt-24 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-6 pt-24 pb-32 lg:px-8">
         <SectionHeader
           eyebrow="Build confidently"
           heading="Testimonials"
@@ -140,17 +150,15 @@ export default function Testimonials() {
         />
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-sm leading-6 sm:mt-24 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-cols-4">
           <TestimonialCard testimonial={featuredTestimonial} featured />
-          
+
           <div className="space-y-8 xl:row-span-2">
             <TestimonialCard testimonial={testimonials[0]} />
           </div>
 
-  
-
           <div className="space-y-8 xl:row-span-2">
             <TestimonialCard testimonial={testimonials[2]} />
           </div>
-          <div className="space-y-8 xl:row-span-4 sm:col-span-2">
+          <div className="space-y-8 sm:col-span-2 xl:row-span-4">
             <TestimonialCard testimonial={testimonials[1]} />
           </div>
         </div>
