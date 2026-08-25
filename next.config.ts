@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: import.meta.dirname,
   },
-  trailingSlash: false,
+  trailingSlash: true,
   images: {
     loader: "custom",
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
