@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import ExportedImage from "next-image-export-optimizer";
-import Script from "next/script";
 import { LinkButton } from "../../components/Button";
+import CalEmbed from "../../components/CalEmbed";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import redwoodsImg from "../../images/redwoods.jpg";
@@ -42,16 +42,12 @@ export default function MeetPage() {
               </div>
             </div>
           </div>
-          <div
-            className="calendly-inline-widget z-10 h-full w-full justify-self-end md:-mt-4"
-            data-url="https://calendly.com/matt-rigg/meet?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=404079"
-          />
+          <div className="z-10 h-full w-full justify-self-end md:-mt-4">
+            <CalEmbed />
+          </div>
         </div>
       </section>
       <Footer />
-
-      {/* Calendly Script */}
-      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
     </main>
   );
 }
